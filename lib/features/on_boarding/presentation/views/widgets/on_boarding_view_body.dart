@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
+import 'package:nafas_app/core/widgets/custom_button.dart';
 import 'package:nafas_app/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
@@ -26,6 +27,11 @@ class OnBoardingViewBody extends StatelessWidget {
             ),
           ),
           SizedBox(height: 15.0),
+          CustomButton(
+            onPressed: () {},
+            text: 'ابدأ الأن',
+          ),
+          SizedBox(height: 30.0),
         ],
       ),
     );
