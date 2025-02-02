@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nafas_app/core/helper/on_generate_routes.dart';
-import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
+import 'package:nafas_app/core/utils/app_colors.dart';
+import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:nafas_app/generated/l10n.dart';
 
 void main() {
@@ -14,7 +15,10 @@ class NafasApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Tajawal'),
+      theme: ThemeData(
+        fontFamily: 'Tajawal',
+        scaffoldBackgroundColor: AppColors.primaryBackgroundColor,
+      ),
       locale: Locale('ar'),
       localizationsDelegates: [
         S.delegate,
@@ -24,7 +28,7 @@ class NafasApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: SplashView.routeName,
+      initialRoute: OnBoardingView.routeName,
       debugShowCheckedModeBanner: false,
     );
   }
