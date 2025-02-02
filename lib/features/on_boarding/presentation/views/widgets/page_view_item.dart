@@ -10,11 +10,13 @@ class PageViewItem extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subtitle,
+    required this.isVisible,
   });
 
   final String image;
   final String title;
   final String subtitle;
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,19 +26,22 @@ class PageViewItem extends StatelessWidget {
         height: MediaQuery.sizeOf(context).height * 0.7,
         child: Column(
           children: [
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 14.0,
-                  ),
-                  child: Text(
-                    'تخطي',
-                    style: TextStyles.bold18.copyWith(
-                      color: AppColors.secondaryTextColor,
+            Visibility(
+              visible: isVisible,
+              child: Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 14.0,
+                    ),
+                    child: Text(
+                      'تخطي',
+                      style: TextStyles.bold18.copyWith(
+                        color: AppColors.secondaryTextColor,
+                      ),
                     ),
                   ),
                 ),
