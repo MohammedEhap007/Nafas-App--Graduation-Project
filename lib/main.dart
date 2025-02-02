@@ -12,6 +12,9 @@ class NafasApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Tajawal'
+      ),
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
       debugShowCheckedModeBanner: false,
