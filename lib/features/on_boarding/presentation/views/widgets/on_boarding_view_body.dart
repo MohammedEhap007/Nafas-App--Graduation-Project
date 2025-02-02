@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/constant.dart';
+import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/widgets/custom_button.dart';
+import 'package:nafas_app/features/auth/presentation/views/login_view.dart';
 import 'package:nafas_app/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -62,7 +65,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             maintainState: true,
             maintainSize: true,
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Prefs.setBool(kIsOnBoardingSeen, true);
+                Navigator.pushReplacementNamed(
+                  context,
+                  LoginView.routeName,
+                );
+              },
               text: 'ابدأ الأن',
             ),
           ),
