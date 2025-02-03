@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nafas_app/features/auth/presentation/forget_password_view.dart';
-import 'package:nafas_app/features/auth/presentation/log_in_view.dart';
-import 'package:nafas_app/features/auth/presentation/sign_up_view.dart';
+import 'package:nafas_app/features/auth/presentation/views/forget_password_view.dart';
+import 'package:nafas_app/features/auth/presentation/views/log_in_view.dart';
+import 'package:nafas_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
 
