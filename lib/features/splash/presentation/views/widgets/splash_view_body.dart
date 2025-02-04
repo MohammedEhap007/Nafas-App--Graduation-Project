@@ -52,7 +52,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void executeNavigation() {
     bool isOnBoardingSeen = Prefs.getBool(kIsOnBoardingSeen);
     Future.delayed(
-      const Duration(milliseconds: 4800),
+      const Duration(milliseconds: 5000),
       () {
         if (isOnBoardingSeen) {
           if (mounted) {
