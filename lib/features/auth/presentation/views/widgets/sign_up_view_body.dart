@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
-import 'package:nafas_app/features/auth/presentation/views/log_in_view.dart';
-import 'package:nafas_app/features/auth/presentation/views/widgets/custom_button.dart';
-import 'package:nafas_app/features/auth/presentation/views/widgets/custom_text_field.dart';
+import 'package:nafas_app/core/widgets/custom_button.dart';
+import 'package:nafas_app/core/widgets/custom_text_field.dart';
 import 'package:nafas_app/features/auth/presentation/views/widgets/google_section.dart';
 
 class SignUpViewBody extends StatelessWidget {
@@ -86,7 +85,7 @@ class SignUpViewBody extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             CustomButton(
-              buttonLable: 'إنشاء حساب',
+              text: 'إنشاء حساب',
               onPressed: () {},
             ),
             const SizedBox(height: 15),
@@ -99,7 +98,7 @@ class SignUpViewBody extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, LogInView.routeName);
+                    Navigator.pop(context);
                   },
                   child: Text(
                     'تسجيل الدخول',

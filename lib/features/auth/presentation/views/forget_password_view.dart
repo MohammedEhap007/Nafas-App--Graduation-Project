@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/features/auth/presentation/views/widgets/forget_password_view_body.dart';
 
 class ForgetPasswordView extends StatelessWidget {
@@ -8,10 +7,7 @@ class ForgetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primaryBackgroundColor,
-      ),
-      body: ForgetPasswordViewBody(),
+      body: SafeArea(child: ForgetPasswordViewBody()),
     );
   }
 }
