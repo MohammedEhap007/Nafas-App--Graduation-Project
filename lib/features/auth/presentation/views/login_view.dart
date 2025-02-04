@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/features/auth/presentation/views/widgets/log_in_view_body.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -7,6 +8,6 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const LogInViewBody();
   }
 }
