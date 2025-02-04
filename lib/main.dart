@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nafas_app/core/helper/on_generate_routes.dart';
 import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
-import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
 import 'package:nafas_app/generated/l10n.dart';
 
 void main() async {
@@ -31,7 +31,7 @@ class NafasApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: OnBoardingView.routeName,
+      initialRoute: SplashView.routeName,
       debugShowCheckedModeBanner: false,
     );
   }
