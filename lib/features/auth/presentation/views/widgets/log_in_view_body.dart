@@ -45,7 +45,7 @@ class LogInViewBody extends StatelessWidget {
               },
               child: Text(
                 'نسيت كلمة المرور؟',
-                style: TextStyles.medium12.copyWith(
+                style: TextStyles.medium14(context).copyWith(
                   color: AppColors.importantButtonsBackgroundColor,
                 ),
               ),
@@ -61,7 +61,7 @@ class LogInViewBody extends StatelessWidget {
               children: [
                 Text(
                   'ليس لديك حساب؟',
-                  style: TextStyles.medium12.copyWith(),
+                  style: TextStyles.medium14(context).copyWith(),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -69,7 +69,7 @@ class LogInViewBody extends StatelessWidget {
                   },
                   child: Text(
                     'انشاء حساب جديد',
-                    style: TextStyles.medium12.copyWith(
+                    style: TextStyles.medium14(context).copyWith(
                       color: AppColors.primaryColor,
                     ),
                   ),

@@ -22,7 +22,7 @@ class SignUpViewBody extends StatelessWidget {
             const SizedBox(height: 50),
             Text(
               'إنشاء حساب جديد',
-              style: TextStyles.medium24,
+              style: TextStyles.medium24(context),
             ),
             const SizedBox(height: 30),
             CustomTextField(
@@ -94,7 +94,7 @@ class SignUpViewBody extends StatelessWidget {
               children: [
                 Text(
                   'لديك حساب بالفعل؟',
-                  style: TextStyles.medium12.copyWith(),
+                  style: TextStyles.medium14(context).copyWith(),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -102,7 +102,7 @@ class SignUpViewBody extends StatelessWidget {
                   },
                   child: Text(
                     'تسجيل الدخول',
-                    style: TextStyles.medium12.copyWith(
+                    style: TextStyles.medium14(context).copyWith(
                       color: AppColors.primaryColor,
                     ),
                   ),

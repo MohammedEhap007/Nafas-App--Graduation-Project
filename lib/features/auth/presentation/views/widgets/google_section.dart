@@ -23,7 +23,7 @@ class GoogleSection extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               'أو الإستمرار بواسطة',
-              style: TextStyles.medium12,
+              style: TextStyles.medium14(context),
             ),
             const SizedBox(width: 10),
             Expanded(
