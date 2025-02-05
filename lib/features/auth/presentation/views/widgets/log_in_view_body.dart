@@ -21,39 +21,46 @@ class LogInViewBody extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 80),
             WelcomeSection(),
             const SizedBox(height: 52),
-            CustomTextField(
-              lable: 'البريد الإلكتروني',
-              hint: 'mail@example.com',
-              icon: AppCustomIcons.mailIon,
-            ),
-            const SizedBox(height: 12),
-            CustomTextField(
-              lable: 'كلمة المرور',
-              hint: '********',
-              icon: AppCustomIcons.lockIcon,
-              suffixIcon: AppCustomIcons.hideIcon,
-            ),
-            const SizedBox(height: 12),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, ForgetPasswordView.routeName);
-              },
-              child: Text(
-                'نسيت كلمة المرور؟',
-                style: TextStyles.medium14(context).copyWith(
-                  color: AppColors.importantButtonsBackgroundColor,
-                ),
+            Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomTextField(
+                    lable: 'البريد الإلكتروني',
+                    hint: 'mail@example.com',
+                    icon: AppCustomIcons.mailIon,
+                  ),
+                  const SizedBox(height: 12),
+                  CustomTextField(
+                    lable: 'كلمة المرور',
+                    hint: '********',
+                    icon: AppCustomIcons.lockIcon,
+                    suffixIcon: AppCustomIcons.hideIcon,
+                  ),
+                  const SizedBox(height: 12),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, ForgetPasswordView.routeName);
+                    },
+                    child: Text(
+                      'نسيت كلمة المرور؟',
+                      style: TextStyles.medium14(context).copyWith(
+                        color: AppColors.importantButtonsBackgroundColor,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 33),
+                  CustomButton(
+                    text: 'تسجيل الدخول',
+                    onPressed: () {},
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 33),
-            CustomButton(
-              text: 'تسجيل الدخول',
-              onPressed: () {},
             ),
             const SizedBox(height: 15),
             Row(
