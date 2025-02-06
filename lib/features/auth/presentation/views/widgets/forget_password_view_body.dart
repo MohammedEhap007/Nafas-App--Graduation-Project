@@ -19,13 +19,13 @@ class ForgetPasswordViewBody extends StatelessWidget {
           children: [
             Text(
               'نسيت كلمة المرور؟',
-              style: TextStyles.medium28,
+              style: TextStyles.medium28(context),
             ),
             const SizedBox(
               height: 8,
             ),
             Text('يمكنك استعادة كلمة المرور الأن عبر البريد',
-                style: TextStyles.medium18),
+                style: TextStyles.medium18(context)),
             SizedBox(height: 84),
             SvgPicture.asset(
               AppCustomIcons.forgetPasswordAvatar,

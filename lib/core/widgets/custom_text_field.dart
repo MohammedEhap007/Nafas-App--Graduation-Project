@@ -25,13 +25,14 @@ class CustomTextField extends StatelessWidget {
       children: [
         Text(
           lable,
-          style: TextStyles.medium12,
+          style: TextStyles.medium16(context),
         ),
         TextFormField(
           validator: validator,
+          cursorColor: AppColors.primaryColor,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyles.medium12.copyWith(
+            hintStyle: TextStyles.medium16(context).copyWith(
               color: AppColors.secondaryTextColor,
             ),
             filled: true,

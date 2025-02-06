@@ -42,6 +42,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
           'assets/animations/splash_logo.json',
           fit: BoxFit.fill,
         ),
+        disableNavigation: true,
         nextScreen: const OnBoardingView(),
         duration: 3800,
         splashIconSize: double.infinity,
