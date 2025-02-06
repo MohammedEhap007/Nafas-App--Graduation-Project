@@ -29,6 +29,7 @@ class CustomTextField extends StatelessWidget {
         ),
         TextFormField(
           validator: validator,
+          cursorColor: AppColors.primaryColor,
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: TextStyles.medium16(context).copyWith(
