@@ -93,8 +93,8 @@ class SignUpViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'لديك حساب بالفعل؟',
-                  style: TextStyles.medium14(context).copyWith(),
+                  'لديك حساب بالفعل؟ ',
+                  style: TextStyles.medium14(context),
                 ),
                 GestureDetector(
                   onTap: () {
