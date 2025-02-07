@@ -40,7 +40,7 @@ class SignUpViewBody extends StatelessWidget {
             CustomTextField(
               lable: 'البريد الإلكتروني',
               hint: 'mail@example.com',
-              icon: AppCustomIcons.mailIon,
+              icon: AppCustomIcons.mailIcon,
               validator: (value) {
                 if (value == null) {
                   return 'الرجاء إدخال البريد الإلكتروني';

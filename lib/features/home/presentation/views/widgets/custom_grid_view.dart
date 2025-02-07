@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
@@ -15,22 +14,22 @@ class CustomCounterGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     List<CounterModel> counterData = [
       CounterModel(
-        image: Assets.boxMoneyAvatar,
+        image: Assets.imagesMoneyBox,
         count: '500 جنيه',
         title: 'المبلغ المُوفَّر',
       ),
       CounterModel(
-        image: Assets.cigaretteAvatar,
+        image: Assets.imagesCigarette,
         count: '50 سيجارة',
         title: 'السجائر المُوفّرة',
       ),
       CounterModel(
-        image: Assets.goalAvatar,
+        image: Assets.imagesGoal,
         count: '1000 جنيه',
         title: 'الهدف المحدد',
       ),
       CounterModel(
-        image: Assets.insepctionAvatar,
+        image: Assets.imagesInspection,
         count: '10 هدف',
         title: 'الأهداف المكتمله',
       ),
@@ -44,14 +43,17 @@ class CustomCounterGridView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(
               top: 20,
-              // bottom: 20,
+              bottom: 20,
               right: 18.5,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset(
+                Image.asset(
                   counterData[index].image,
+                  width: 34,
+                  height: 34,
                 ),
                 SizedBox(
                   height: 5,
@@ -59,6 +61,9 @@ class CustomCounterGridView extends StatelessWidget {
                 Text(
                   counterData[index].title,
                   style: TextStyles.medium16(context),
+                ),
+                SizedBox(
+                  height: 2,
                 ),
                 Text(
                   counterData[index].count,

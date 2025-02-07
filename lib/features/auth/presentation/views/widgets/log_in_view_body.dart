@@ -33,7 +33,7 @@ class LogInViewBody extends StatelessWidget {
                   CustomTextField(
                     lable: 'البريد الإلكتروني',
                     hint: 'mail@example.com',
-                    icon: AppCustomIcons.mailIon,
+                    icon: AppCustomIcons.mailIcon,
                   ),
                   const SizedBox(height: 12),
                   CustomTextField(

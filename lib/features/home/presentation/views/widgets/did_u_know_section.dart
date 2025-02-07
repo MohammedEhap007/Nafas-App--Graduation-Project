@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/core/widgets/custom_container.dart';
@@ -29,7 +28,11 @@ class DidUKnowSection extends StatelessWidget {
             ),
             child: Row(
               children: [
-                SvgPicture.asset(Assets.ideaAvatar),
+                Image.asset(
+                  Assets.imagesIdea,
+                  width: 63,
+                  height: 63,
+                ),
                 SizedBox(width: 15),
                 Expanded(
                   child: Text(

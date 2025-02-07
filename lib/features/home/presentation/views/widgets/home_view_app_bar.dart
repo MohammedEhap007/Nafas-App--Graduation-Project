@@ -15,10 +15,10 @@ class HomeViewAppBar extends StatelessWidget {
         SvgPicture.asset(AppCustomIcons.blueHumanIcon),
         const SizedBox(width: 15),
         Text(
-          'مرحبا بك , يا محمد أحمد',
+          'مرحبا بك, يا محمد أحمد',
           style: TextStyles.medium16(context),
         ),
-        Expanded(child: SizedBox()),
+        Spacer(),
         Container(
           width: 42,
           height: 42,

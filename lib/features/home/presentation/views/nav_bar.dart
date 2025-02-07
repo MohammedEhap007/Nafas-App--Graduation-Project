@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -10,7 +8,7 @@ import 'package:nafas_app/features/home/presentation/views/home_view.dart';
 
 class NavBarView extends StatefulWidget {
   const NavBarView({super.key});
-  static const String routeName = '/navBar';
+  static const String routeName = 'navBar';
 
   @override
   State<NavBarView> createState() => _NavBarViewState();
@@ -28,105 +26,123 @@ class _NavBarViewState extends State<NavBarView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[selectedIndex],
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(
-          bottom: 10,
-          right: 5,
-          left: 5,
-        ),
-        child: GNav(
-          haptic: true,
-          tabBorderRadius: 15,
-          curve: Curves.easeOutExpo,
-          duration: const Duration(milliseconds: 500),
-          gap: 8,
-          color: AppColors.importantButtonsBackgroundColor,
-          iconSize: 24,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          tabs: [
-            GButton(
-              leading: SvgPicture.asset(
-                AppCustomIcons.homeIcon,
-                height: 28,
-                width: 28,
-                colorFilter: ColorFilter.mode(
-                  selectedIndex == 0 ? Color(0xff246BFE) : Colors.grey,
-                  BlendMode.srcIn,
-                ),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            top: 12,
+            bottom: 20,
+            right: 16,
+            left: 16,
+          ),
+          child: GNav(
+            tabActiveBorder: Border.symmetric(
+              horizontal: BorderSide(
+                width: 2,
+                color: Colors.transparent,
               ),
-              icon: Icons.circle,
-              iconSize: 0,
-              text: 'الرئيسيه',
-              textStyle: TextStyles.medium12(context).copyWith(
-                color: Color(0xff246BFE),
-              ),
-              rippleColor: Color(0xff246BFE).withOpacity(0.1),
-              backgroundColor: Color(0xff246BFE).withOpacity(0.1),
             ),
-            GButton(
-              leading: SvgPicture.asset(
-                AppCustomIcons.counterIcon,
-                height: 28,
-                width: 28,
-                colorFilter: ColorFilter.mode(
-                  selectedIndex == 1 ? Color(0xff00AF6A) : Colors.grey,
-                  BlendMode.srcIn,
-                ),
-              ),
-              icon: Icons.circle,
-              iconSize: 0,
-              text: 'العداد',
-              textStyle: TextStyles.medium12(context).copyWith(
-                color: Color(0xff00AF6A),
-              ),
-              rippleColor: Color(0xff00AF6A).withOpacity(0.1),
-              backgroundColor: Color(0xff00AF6A).withOpacity(0.1),
+            tabBorderRadius: 8,
+            gap: 5,
+            color: AppColors.secondaryTextColor,
+            iconSize: 24,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 10,
             ),
-            GButton(
-              leading: SvgPicture.asset(
-                AppCustomIcons.newsPaperIcon,
-                height: 28,
-                width: 28,
-                colorFilter: ColorFilter.mode(
-                  selectedIndex == 2 ? Color(0xff7F00FF) : Colors.grey,
-                  BlendMode.srcIn,
+            tabs: [
+              GButton(
+                leading: SvgPicture.asset(
+                  AppCustomIcons.homeIcon,
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                    selectedIndex == 0
+                        ? AppColors.secondaryColor
+                        : AppColors.secondaryTextColor,
+                    BlendMode.srcIn,
+                  ),
                 ),
-              ),
-              icon: Icons.circle,
-              iconSize: 0,
-              text: 'الدليل',
-              textStyle: TextStyles.medium12(context).copyWith(
-                color: Color(0xff7F00FF),
-              ),
-              rippleColor: Color(0xff7F00FF).withOpacity(0.1),
-              backgroundColor: Color(0xff7F00FF).withOpacity(0.1),
-            ),
-            GButton(
-              leading: SvgPicture.asset(
-                AppCustomIcons.lasticonInNavBar,
-                height: 28,
-                width: 28,
-                colorFilter: ColorFilter.mode(
-                  selectedIndex == 3 ? Color(0xff000000) : Colors.grey,
-                  BlendMode.srcIn,
+                icon: Icons.circle,
+                iconSize: 0,
+                text: 'الرئيسيه',
+                textStyle: TextStyles.medium12(context).copyWith(
+                  color: AppColors.secondaryColor,
                 ),
+                rippleColor: AppColors.secondaryColor.withOpacity(0.1),
+                backgroundColor: AppColors.secondaryColor.withOpacity(0.1),
               ),
-              icon: Icons.circle,
-              iconSize: 0,
-              text: 'التجارب',
-              textStyle: TextStyles.medium12(context).copyWith(
-                color: Color(0xff000000),
+              GButton(
+                leading: SvgPicture.asset(
+                  AppCustomIcons.counterIcon,
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                    selectedIndex == 1
+                        ? Color(0xff00AF6A)
+                        : AppColors.secondaryTextColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                icon: Icons.circle,
+                iconSize: 0,
+                text: 'العداد',
+                textStyle: TextStyles.medium12(context).copyWith(
+                  color: Color(0xff00AF6A),
+                ),
+                rippleColor: Color(0xff00AF6A).withOpacity(0.1),
+                backgroundColor: Color(0xff00AF6A).withOpacity(0.1),
               ),
-              rippleColor: Color(0xff000000).withOpacity(0.1),
-              backgroundColor: Color(0xff000000).withOpacity(0.1),
-            ),
-          ],
-          selectedIndex: selectedIndex,
-          onTabChange: (index) {
-            setState(() {
-              selectedIndex = index;
-            });
-          },
+              GButton(
+                leading: SvgPicture.asset(
+                  AppCustomIcons.newsPaperIcon,
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                    selectedIndex == 2
+                        ? Color(0xff7F00FF)
+                        : AppColors.secondaryTextColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                icon: Icons.circle,
+                iconSize: 0,
+                text: 'الدليل',
+                textStyle: TextStyles.medium12(context).copyWith(
+                  color: Color(0xff7F00FF),
+                ),
+                rippleColor: Color(0xff7F00FF).withOpacity(0.1),
+                backgroundColor: Color(0xff7F00FF).withOpacity(0.1),
+              ),
+              GButton(
+                leading: SvgPicture.asset(
+                  AppCustomIcons.lastIconInNavBar,
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                    selectedIndex == 3
+                        ? Colors.black
+                        : AppColors.secondaryTextColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                icon: Icons.circle,
+                iconSize: 0,
+                text: 'التجارب',
+                textStyle: TextStyles.medium12(context).copyWith(
+                  color: Colors.black,
+                ),
+                rippleColor: Colors.black.withOpacity(0.1),
+                backgroundColor: Colors.black.withOpacity(0.1),
+              ),
+            ],
+            selectedIndex: selectedIndex,
+            onTabChange: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+          ),
         ),
       ),
     );
