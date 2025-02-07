@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
@@ -29,10 +30,9 @@ class _NavBarViewState extends State<NavBarView> {
       body: pages[selectedIndex],
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(
-          top: 12,
-          bottom: 32,
-          right: 16,
-          left: 16,
+          bottom: 10,
+          right: 5,
+          left: 5,
         ),
         child: GNav(
           haptic: true,
@@ -40,13 +40,15 @@ class _NavBarViewState extends State<NavBarView> {
           curve: Curves.easeOutExpo,
           duration: const Duration(milliseconds: 500),
           gap: 8,
+          color: AppColors.importantButtonsBackgroundColor,
+          iconSize: 24,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           tabs: [
             GButton(
               leading: SvgPicture.asset(
                 AppCustomIcons.homeIcon,
-                height: 26,
-                width: 26,
+                height: 28,
+                width: 28,
                 colorFilter: ColorFilter.mode(
                   selectedIndex == 0 ? Color(0xff246BFE) : Colors.grey,
                   BlendMode.srcIn,
