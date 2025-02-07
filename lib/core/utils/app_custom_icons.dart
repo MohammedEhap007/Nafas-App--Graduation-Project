@@ -9,4 +9,6 @@ abstract class AppCustomIcons {
   static const homeIcon = 'assets/images/icons/home.svg';
   static const newsPaperIcon = 'assets/images/icons/newspaper.svg';
   static const lasticonInNavBar = 'assets/images/icons/last_icon_in_navbar.svg';
+  static const bellIcon = 'assets/images/icons/bell.svg';
+  static const blueHumanIcon = 'assets/images/icons/blue_human.svg';
 }
