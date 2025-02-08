@@ -35,7 +35,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
             CustomTextField(
               lable: 'البريد الإلكتروني',
               hint: 'mail@example.com',
-              icon: AppCustomIcons.mailIon,
+              icon: AppCustomIcons.mailIcon,
               validator: (value) {
                 return ' ( البريد غير صحيح )';
               },

@@ -8,6 +8,7 @@ import 'package:nafas_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:nafas_app/core/widgets/custom_text_field.dart';
 import 'package:nafas_app/features/auth/presentation/views/widgets/google_section.dart';
 import 'package:nafas_app/features/auth/presentation/views/widgets/welcome_section.dart';
+import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
 
 class LogInViewBody extends StatelessWidget {
   const LogInViewBody({super.key});
@@ -32,7 +33,7 @@ class LogInViewBody extends StatelessWidget {
                   CustomTextField(
                     lable: 'البريد الإلكتروني',
                     hint: 'mail@example.com',
-                    icon: AppCustomIcons.mailIon,
+                    icon: AppCustomIcons.mailIcon,
                   ),
                   const SizedBox(height: 12),
                   CustomTextField(
@@ -57,7 +58,9 @@ class LogInViewBody extends StatelessWidget {
                   const SizedBox(height: 33),
                   CustomButton(
                     text: 'تسجيل الدخول',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, NavBarView.routeName);
+                    },
                   ),
                 ],
               ),

@@ -15,6 +15,13 @@ abstract class TextStyles {
     );
   }
 
+  static TextStyle bold16(context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w700,
+    );
+  }
+
   static TextStyle bold12(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 12),
