@@ -16,7 +16,7 @@ class CustomCounterGridView extends StatelessWidget {
       CounterModel(
         image: Assets.imagesMoneyBox,
         count: '500 جنيه',
-        title: 'المبلغ المُوفَّر',
+        title: 'المبلغ المُوفّر',
       ),
       CounterModel(
         image: Assets.imagesCigarette,

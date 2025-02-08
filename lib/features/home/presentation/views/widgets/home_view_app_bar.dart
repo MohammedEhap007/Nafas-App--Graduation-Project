@@ -10,28 +10,31 @@ class HomeViewAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(AppCustomIcons.blueHumanIcon),
-        const SizedBox(width: 15),
-        Text(
-          'مرحبا بك, يا محمد أحمد',
-          style: TextStyles.medium16(context),
-        ),
-        Spacer(),
-        Container(
-          width: 42,
-          height: 42,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      child: Row(
+        children: [
+          SvgPicture.asset(AppCustomIcons.blueHumanIcon),
+          const SizedBox(width: 15),
+          Text(
+            'مرحبا بك, يا محمد أحمد',
+            style: TextStyles.medium16(context),
           ),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: SvgPicture.asset(AppCustomIcons.bellIcon),
+          Spacer(),
+          Container(
+            width: 42,
+            height: 42,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: SvgPicture.asset(AppCustomIcons.bellIcon),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

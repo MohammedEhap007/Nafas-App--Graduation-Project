@@ -20,7 +20,7 @@ class _NavBarViewState extends State<NavBarView> {
     HomeView(),
     HomeView(),
     HomeView(),
-    HomeView(),
+    Scaffold(),
   ];
   @override
   Widget build(BuildContext context) {
