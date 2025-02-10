@@ -45,6 +45,7 @@ class CustomCounterGridView extends StatelessWidget {
               top: 20,
               bottom: 20,
               right: 18.5,
+              left: 8,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -58,10 +59,12 @@ class CustomCounterGridView extends StatelessWidget {
                 SizedBox(
                   height: 5,
                 ),
-                Text(
-                  counterData[index].title,
-                  style: TextStyles.medium16(context).copyWith(
-                    color: AppColors.primaryTextColor,
+                FittedBox(
+                  child: Text(
+                    counterData[index].title,
+                    style: TextStyles.medium16(context).copyWith(
+                      color: AppColors.primaryTextColor,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -82,7 +85,8 @@ class CustomCounterGridView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: 11 / 8,
+        // childAspectRatio: 11 / 8,
+        childAspectRatio: MediaQuery.sizeOf(context).aspectRatio * 2.1,
       ),
     );
   }

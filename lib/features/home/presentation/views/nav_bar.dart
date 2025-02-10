@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
+import 'package:nafas_app/features/guide/presentation/views/guide_view.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
 
 class NavBarView extends StatefulWidget {
@@ -19,7 +20,7 @@ class _NavBarViewState extends State<NavBarView> {
   static const List<Widget> pages = [
     HomeView(),
     HomeView(),
-    HomeView(),
+    GuideView(),
     Scaffold(),
   ];
   @override

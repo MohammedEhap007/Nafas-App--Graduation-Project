@@ -44,24 +44,23 @@ class TapToExpandWidgetState extends State<TapToExpandWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      widget.text,
-                      style: TextStyles.medium16(context).copyWith(
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
-                    InkWell(
-                      child: AnimatedRotation(
-                        duration: Duration(milliseconds: 500),
-                        turns: _isExpanded ? 0.25 : 0.5,
-                        child: Icon(
-                          Icons.arrow_back_ios_new,
-                          color: _isExpanded
-                              ? AppColors.primaryColor
-                              : AppColors.secondaryTextColor,
+                    Expanded(
+                      child: Text(
+                        widget.text,
+                        style: TextStyles.medium16(context).copyWith(
+                          color: AppColors.primaryColor,
                         ),
                       ),
-                      onTap: () {},
+                    ),
+                    AnimatedRotation(
+                      duration: Duration(milliseconds: 500),
+                      turns: _isExpanded ? 0.25 : 0.5,
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: _isExpanded
+                            ? AppColors.primaryColor
+                            : AppColors.secondaryTextColor,
+                      ),
                     ),
                   ],
                 ),
