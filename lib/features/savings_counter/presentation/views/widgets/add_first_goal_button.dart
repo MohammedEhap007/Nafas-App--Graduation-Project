@@ -3,8 +3,8 @@ import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/core/widgets/custom_container.dart';
 
-class AddFirstGoal extends StatelessWidget {
-  const AddFirstGoal({super.key});
+class AddFirstGoalButton extends StatelessWidget {
+  const AddFirstGoalButton({super.key});
 
   @override
   Widget build(BuildContext context) {
