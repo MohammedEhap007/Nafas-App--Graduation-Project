@@ -6,6 +6,9 @@ import 'package:nafas_app/features/guide/presentation/views/more_articles_view.d
 import 'package:nafas_app/features/guide/presentation/views/more_vedios_view.dart';
 import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
 import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/account_data_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/privacy_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/rules_view.dart';
 import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
 
 Route onGenerateRoute(RouteSettings settings) {
@@ -27,6 +30,12 @@ Route onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const MoreVediosView());
     case MoreArticlesView.routeName:
       return MaterialPageRoute(builder: (context) => const MoreArticlesView());
+    case AccountDataView.routeName:
+      return MaterialPageRoute(builder: (context) => const AccountDataView());
+    case RulesView.routeName:
+      return MaterialPageRoute(builder: (context) => const RulesView());
+    case PrivacyView.routeName:
+      return MaterialPageRoute(builder: (context) => const PrivacyView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
