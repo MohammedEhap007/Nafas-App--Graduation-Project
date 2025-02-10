@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAppIcon
   /// assets/images/app_icon.png
   static const String imagesAppIcon = "assets/images/app_icon.png";
@@ -20,7 +20,8 @@ class Assets {
 
   /// Assets for imagesIconsBlueHuman
   /// assets/images/icons/blue_human.svg
-  static const String imagesIconsBlueHuman = "assets/images/icons/blue_human.svg";
+  static const String imagesIconsBlueHuman =
+      "assets/images/icons/blue_human.svg";
 
   /// Assets for imagesIconsCounter
   /// assets/images/icons/counter.svg
@@ -28,11 +29,13 @@ class Assets {
 
   /// Assets for imagesIconsFlatColorIconsGoogle
   /// assets/images/icons/flat-color-icons_google.svg
-  static const String imagesIconsFlatColorIconsGoogle = "assets/images/icons/flat-color-icons_google.svg";
+  static const String imagesIconsFlatColorIconsGoogle =
+      "assets/images/icons/flat-color-icons_google.svg";
 
   /// Assets for imagesIconsForgotPassword
   /// assets/images/icons/forgot_password.svg
-  static const String imagesIconsForgotPassword = "assets/images/icons/forgot_password.svg";
+  static const String imagesIconsForgotPassword =
+      "assets/images/icons/forgot_password.svg";
 
   /// Assets for imagesIconsHide
   /// assets/images/icons/hide.svg
@@ -44,7 +47,8 @@ class Assets {
 
   /// Assets for imagesIconsLastIconInNavbar
   /// assets/images/icons/last_icon_in_navbar.svg
-  static const String imagesIconsLastIconInNavbar = "assets/images/icons/last_icon_in_navbar.svg";
+  static const String imagesIconsLastIconInNavbar =
+      "assets/images/icons/last_icon_in_navbar.svg";
 
   /// Assets for imagesIconsLockOn
   /// assets/images/icons/lock-on.svg
@@ -56,7 +60,8 @@ class Assets {
 
   /// Assets for imagesIconsNewspaper
   /// assets/images/icons/newspaper.svg
-  static const String imagesIconsNewspaper = "assets/images/icons/newspaper.svg";
+  static const String imagesIconsNewspaper =
+      "assets/images/icons/newspaper.svg";
 
   /// Assets for imagesIconsShape
   /// assets/images/icons/shape.svg
@@ -76,22 +81,30 @@ class Assets {
 
   /// Assets for imagesOnBoardingItem1
   /// assets/images/on_boarding_item1.svg
-  static const String imagesOnBoardingItem1 = "assets/images/on_boarding_item1.svg";
+  static const String imagesOnBoardingItem1 =
+      "assets/images/on_boarding_item1.svg";
 
   /// Assets for imagesOnBoardingItem2
   /// assets/images/on_boarding_item2.svg
-  static const String imagesOnBoardingItem2 = "assets/images/on_boarding_item2.svg";
+  static const String imagesOnBoardingItem2 =
+      "assets/images/on_boarding_item2.svg";
 
   /// Assets for imagesOnBoardingItem3
   /// assets/images/on_boarding_item3.svg
-  static const String imagesOnBoardingItem3 = "assets/images/on_boarding_item3.svg";
+  static const String imagesOnBoardingItem3 =
+      "assets/images/on_boarding_item3.svg";
 
   /// Assets for imagesOnBoardingItem4
   /// assets/images/on_boarding_item4.svg
-  static const String imagesOnBoardingItem4 = "assets/images/on_boarding_item4.svg";
+  static const String imagesOnBoardingItem4 =
+      "assets/images/on_boarding_item4.svg";
 
   /// Assets for imagesSplashLogo
   /// assets/images/splash_logo.png
   static const String imagesSplashLogo = "assets/images/splash_logo.png";
-}
 
+  /// Assets for articleTextImage
+  /// assets/images/article_text_image.png
+  static const String articleTextImage = "assets/images/articletestimage.png";
+  static const String vedioTestimage = "assets/images/vediotestimage.png";
+}
