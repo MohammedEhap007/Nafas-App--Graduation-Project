@@ -93,5 +93,9 @@ class Assets {
   /// Assets for imagesSplashLogo
   /// assets/images/splash_logo.png
   static const String imagesSplashLogo = "assets/images/splash_logo.png";
+
+  /// Assets for imagesWallet
+  /// assets/images/wallet.png
+  static const String imagesWallet = "assets/images/wallet.png";
 }
 
