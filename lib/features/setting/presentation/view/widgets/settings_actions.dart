@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
+import 'package:nafas_app/features/setting/presentation/view/account_data_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/privacy_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/rules_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_settings_container.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_settings_tap_to_expand.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_switcher.dart';
@@ -25,6 +28,9 @@ class SettingsActions extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 icon: AppCustomIcons.accountDataIcon,
                 lable: 'بيانات الحساب',
+                onTap: () {
+                  Navigator.pushNamed(context, AccountDataView.routeName);
+                },
               ),
               CustomSettingsContainer(
                 padding: EdgeInsets.zero,
@@ -59,11 +65,17 @@ class SettingsActions extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 icon: AppCustomIcons.rulesIcon,
                 lable: 'الشروط والأحكام ',
+                onTap: () {
+                  Navigator.pushNamed(context, RulesView.routeName);
+                },
               ),
               CustomSettingsContainer(
                 padding: EdgeInsets.zero,
                 icon: AppCustomIcons.privacyIcon,
                 lable: 'سياسية الخصوصية',
+                onTap: () {
+                  Navigator.pushNamed(context, PrivacyView.routeName);
+                },
               ),
             ],
           ),

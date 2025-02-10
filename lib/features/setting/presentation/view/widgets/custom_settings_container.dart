@@ -10,14 +10,17 @@ class CustomSettingsContainer extends StatelessWidget {
     required this.icon,
     required this.lable,
     required this.padding,
+    this.onTap,
   });
   final Widget? lastWidget;
   final String icon;
   final String lable;
   final EdgeInsetsGeometry padding;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: CustomContainer(
         child: Padding(
           padding: padding,
