@@ -65,12 +65,12 @@ class _NavBarViewState extends State<NavBarView> {
                 ),
                 icon: Icons.circle,
                 iconSize: 0,
-                text: 'الرئيسيه',
+                text: 'الرئيسية',
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: AppColors.secondaryColor,
                 ),
-                rippleColor: AppColors.secondaryColor.withOpacity(0.1),
-                backgroundColor: AppColors.secondaryColor.withOpacity(0.1),
+                rippleColor: AppColors.secondaryColor.withAlpha(25),
+                backgroundColor: AppColors.secondaryColor.withAlpha(25),
               ),
               GButton(
                 leading: SvgPicture.asset(
@@ -90,8 +90,8 @@ class _NavBarViewState extends State<NavBarView> {
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Color(0xff00AF6A),
                 ),
-                rippleColor: Color(0xff00AF6A).withOpacity(0.1),
-                backgroundColor: Color(0xff00AF6A).withOpacity(0.1),
+                rippleColor: Color(0xff00AF6A).withAlpha(25),
+                backgroundColor: Color(0xff00AF6A).withAlpha(25),
               ),
               GButton(
                 leading: SvgPicture.asset(
@@ -111,8 +111,8 @@ class _NavBarViewState extends State<NavBarView> {
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Color(0xff7F00FF),
                 ),
-                rippleColor: Color(0xff7F00FF).withOpacity(0.1),
-                backgroundColor: Color(0xff7F00FF).withOpacity(0.1),
+                rippleColor: Color(0xff7F00FF).withAlpha(25),
+                backgroundColor: Color(0xff7F00FF).withAlpha(25),
               ),
               GButton(
                 leading: SvgPicture.asset(
@@ -132,8 +132,8 @@ class _NavBarViewState extends State<NavBarView> {
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Colors.black,
                 ),
-                rippleColor: Colors.black.withOpacity(0.1),
-                backgroundColor: Colors.black.withOpacity(0.1),
+                rippleColor: Colors.black.withAlpha(25),
+                backgroundColor: Colors.black.withAlpha(25),
               ),
             ],
             selectedIndex: selectedIndex,

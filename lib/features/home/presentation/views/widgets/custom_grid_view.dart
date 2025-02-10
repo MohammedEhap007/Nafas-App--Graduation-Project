@@ -60,15 +60,18 @@ class CustomCounterGridView extends StatelessWidget {
                 ),
                 Text(
                   counterData[index].title,
-                  style: TextStyles.medium16(context),
+                  style: TextStyles.medium16(context).copyWith(
+                    color: AppColors.primaryTextColor,
+                  ),
                 ),
                 SizedBox(
                   height: 2,
                 ),
                 Text(
                   counterData[index].count,
-                  style: TextStyles.medium16(context)
-                      .copyWith(color: AppColors.primaryColor),
+                  style: TextStyles.medium16(context).copyWith(
+                    color: AppColors.primaryColor,
+                  ),
                 ),
               ],
             ),
@@ -79,6 +82,7 @@ class CustomCounterGridView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
+        childAspectRatio: 11 / 8,
       ),
     );
   }
