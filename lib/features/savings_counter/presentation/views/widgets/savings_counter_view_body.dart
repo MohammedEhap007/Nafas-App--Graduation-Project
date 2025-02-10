@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nafas_app/constant.dart';
 import 'package:nafas_app/core/widgets/custom_app_bar.dart';
 import 'package:nafas_app/features/home/presentation/views/widgets/custom_lable_shape.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_first_goal.dart';
 
 class SavingsCounterViewBody extends StatelessWidget {
   const SavingsCounterViewBody({super.key});
@@ -21,6 +22,7 @@ class SavingsCounterViewBody extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
+          AddFirstGoal(),
         ],
       ),
     );
