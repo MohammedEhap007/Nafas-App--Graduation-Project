@@ -107,4 +107,5 @@ class Assets {
   /// assets/images/article_text_image.png
   static const String articleTextImage = "assets/images/articletestimage.png";
   static const String vedioTestimage = "assets/images/vediotestimage.png";
+  static const String selfieAvatar = 'assets/images/selfieavatar.png';
 }

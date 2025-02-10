@@ -11,4 +11,14 @@ abstract class AppCustomIcons {
   static const lastIconInNavBar = 'assets/images/icons/last_icon_in_navbar.svg';
   static const bellIcon = 'assets/images/icons/bell.svg';
   static const blueHumanIcon = 'assets/images/icons/blue_human.svg';
+  static const myAccountIcon = 'assets/images/icons/myaccountIcon.svg';
+  static const nightMoodIcon = 'assets/images/icons/nightmoodIcon.svg';
+  static const usageDataIcon = 'assets/images/icons/usagedataIcon.svg';
+  static const logOutIcon = 'assets/images/icons/logoutIcon.svg';
+  static const accountDataIcon = 'assets/images/icons/accountdataIcon.svg';
+  static const changePasswordIcon =
+      'assets/images/icons/changepasswordIcon.svg';
+  static const deleteAccountIcon = 'assets/images/icons/deleteaccountIcon.svg';
+  static const privacyIcon = 'assets/images/icons/privacyIcon.svg';
+  static const rulesIcon = 'assets/images/icons/rulesIcon.svg';
 }
