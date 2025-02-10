@@ -23,6 +23,9 @@ class SavingsCounterViewBody extends StatelessWidget {
             height: 12,
           ),
           AddFirstGoal(),
+          SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );
