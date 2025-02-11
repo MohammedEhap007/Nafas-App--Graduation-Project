@@ -6,6 +6,7 @@ import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/features/guide/presentation/views/guide_view.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/savings_counter_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/settings_view.dart';
 
 class NavBarView extends StatefulWidget {
@@ -20,7 +21,7 @@ class _NavBarViewState extends State<NavBarView> {
   int selectedIndex = 0;
   static const List<Widget> pages = [
     HomeView(),
-    HomeView(),
+    SavingsCounterView(),
     GuideView(),
     SettingsView(),
   ];
