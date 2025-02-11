@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
+import 'package:nafas_app/core/widgets/custom_button.dart';
+import 'package:nafas_app/features/auth/presentation/views/log_in_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/account_data_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/privacy_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/rules_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/widgets/custom_alert.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_settings_container.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_settings_tap_to_expand.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_switcher.dart';
@@ -41,6 +45,27 @@ class SettingsActions extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 icon: AppCustomIcons.deleteAccountIcon,
                 lable: 'حذف الحساب ',
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return CustomAlert(
+                        title: 'هل حقا تريد حذف الحساب ؟',
+                        content:
+                            'فور تأكيدك حذف الحساب , سيتم حذف الحساب نهائيا ولا يمكن إيقاف عملية الحذف بمجرد التأكيد.',
+                        button1: CustomButton(onPressed: () {}, text: 'حذف'),
+                        button2: CustomButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          text: 'إلغاء',
+                          backgroundColor:
+                              AppColors.importantButtonsBackgroundColor,
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             ],
           ),
@@ -87,6 +112,31 @@ class SettingsActions extends StatelessWidget {
           ),
           icon: AppCustomIcons.logOutIcon,
           lable: 'تسجيل الخروج',
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return CustomAlert(
+                  title: 'تأكيد تسجيل الخروج',
+                  content: 'هل تريد تسجيل الخروج!  نحن بإنتظار عودتك',
+                  button1: CustomButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    text: 'إلغاء',
+                  ),
+                  button2: CustomButton(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, LogInView.routeName, (route) => false);
+                    },
+                    text: 'تأكيد',
+                    backgroundColor: AppColors.importantButtonsBackgroundColor,
+                  ),
+                );
+              },
+            );
+          },
         ),
         SizedBox(height: 10),
       ],
