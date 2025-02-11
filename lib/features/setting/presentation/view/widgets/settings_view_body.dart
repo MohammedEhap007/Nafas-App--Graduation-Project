@@ -19,7 +19,7 @@ class SettingsViewBody extends StatelessWidget {
           SizedBox(height: 41),
           CircleAvatar(
             radius: 60,
-            backgroundImage: AssetImage(Assets.selfieAvatar),
+            backgroundImage: AssetImage(Assets.imagesSelfieAvatar),
           ),
           SizedBox(height: 20),
           Text(

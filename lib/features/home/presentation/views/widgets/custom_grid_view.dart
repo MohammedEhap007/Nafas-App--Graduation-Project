@@ -45,7 +45,6 @@ class CustomCounterGridView extends StatelessWidget {
               top: 20,
               bottom: 20,
               right: 18.5,
-              left: 8,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -85,8 +84,7 @@ class CustomCounterGridView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        // childAspectRatio: 11 / 8,
-        childAspectRatio: MediaQuery.sizeOf(context).aspectRatio * 2.1,
+        childAspectRatio: MediaQuery.sizeOf(context).aspectRatio * 3,
       ),
     );
   }

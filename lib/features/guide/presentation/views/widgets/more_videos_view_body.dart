@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 
-class MoreVediosViewBody extends StatelessWidget {
-  const MoreVediosViewBody({super.key});
+class MoreVideosViewBody extends StatelessWidget {
+  const MoreVideosViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MoreVediosViewBody extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            Image.asset(Assets.vedioTestimage),
+            Image.asset(Assets.imagesVideoTestImage),
             SizedBox(height: 13),
             Text(
               'لا تتوقف عن التدخين - كتاب هاري الدر',

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 
-class VediosListView extends StatelessWidget {
-  const VediosListView({super.key});
+class VideosListView extends StatelessWidget {
+  const VideosListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class VediosListView extends StatelessWidget {
             padding: const EdgeInsets.only(left: 12),
             child: Column(
               children: [
-                Image.asset(Assets.vedioTestimage),
+                Image.asset(Assets.imagesVideoTestImage),
                 SizedBox(height: 13),
                 Text(
                   'لا تتوقف عن التدخين - كتاب هاري الدر',

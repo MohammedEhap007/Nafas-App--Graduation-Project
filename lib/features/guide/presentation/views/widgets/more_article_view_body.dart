@@ -16,7 +16,7 @@ class MoreArticleViewBody extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return CustomContainer(
-          child: Image.asset(Assets.articleTextImage),
+          child: Image.asset(Assets.imagesArticleTestImage),
         );
       },
     );

@@ -32,7 +32,7 @@ class AccountDataViewBody extends StatelessWidget {
         SizedBox(height: 41),
         CircleAvatar(
           radius: 60,
-          backgroundImage: AssetImage(Assets.selfieAvatar),
+          backgroundImage: AssetImage(Assets.imagesSelfieAvatar),
         ),
         CustomTextField(
           lable: 'الإسم الأول',

@@ -16,7 +16,7 @@ class ArticlesListView extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(left: 12),
             child: CustomContainer(
-              child: Image.asset(Assets.articleTextImage),
+              child: Image.asset(Assets.imagesArticleTestImage),
             ),
           );
         },
