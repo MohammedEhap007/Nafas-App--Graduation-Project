@@ -90,9 +90,21 @@ class Assets {
   /// assets/images/on_boarding_item4.svg
   static const String imagesOnBoardingItem4 = "assets/images/on_boarding_item4.svg";
 
+  /// Assets for imagesPencil
+  /// assets/images/pencil.png
+  static const String imagesPencil = "assets/images/pencil.png";
+
+  /// Assets for imagesPlus
+  /// assets/images/plus.png
+  static const String imagesPlus = "assets/images/plus.png";
+
   /// Assets for imagesSplashLogo
   /// assets/images/splash_logo.png
   static const String imagesSplashLogo = "assets/images/splash_logo.png";
+
+  /// Assets for imagesTaskCompleted
+  /// assets/images/task_completed.png
+  static const String imagesTaskCompleted = "assets/images/task_completed.png";
 
   /// Assets for imagesWallet
   /// assets/images/wallet.png

@@ -5,7 +5,11 @@ import 'package:nafas_app/core/widgets/custom_container.dart';
 import 'package:nafas_app/features/savings_counter/data/models/goals_item_model.dart';
 
 class GoalsItem extends StatelessWidget {
-  const GoalsItem({super.key, required this.goalsItemModel, this.onPressed});
+  const GoalsItem({
+    super.key,
+    required this.goalsItemModel,
+    this.onPressed,
+  });
 
   final GoalsItemModel goalsItemModel;
   final VoidCallback? onPressed;
@@ -43,6 +47,7 @@ class GoalsItem extends StatelessWidget {
                 color: AppColors.secondaryTextColor,
               ),
               iconSize: 24,
+              
             )
           ],
         ),

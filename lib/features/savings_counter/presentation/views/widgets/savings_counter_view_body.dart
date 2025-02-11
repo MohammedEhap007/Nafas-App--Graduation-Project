@@ -5,6 +5,7 @@ import 'package:nafas_app/features/home/presentation/views/widgets/custom_lable_
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_cigarettes_button.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_first_goal_button.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_savings_money_button.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/widgets/goals_section.dart';
 
 class SavingsCounterViewBody extends StatelessWidget {
   const SavingsCounterViewBody({super.key});
@@ -33,6 +34,10 @@ class SavingsCounterViewBody extends StatelessWidget {
             height: 15,
           ),
           AddSavingsMoneyButton(),
+          SizedBox(
+            height: 15,
+          ),
+          GoalsSection(),
         ],
       ),
     );
