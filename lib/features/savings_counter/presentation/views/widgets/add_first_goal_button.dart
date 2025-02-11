@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/show_custom_dialog.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/core/widgets/custom_container.dart';
@@ -25,7 +26,9 @@ class AddFirstGoalButton extends StatelessWidget {
               height: 10,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                showCustomDialog(context);
+              },
               child: Text(
                 'إضافة هدف',
                 style: TextStyles.medium20(context).copyWith(
