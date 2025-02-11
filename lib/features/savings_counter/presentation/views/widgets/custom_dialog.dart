@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nafas_app/constant.dart';
 import 'package:nafas_app/core/widgets/custom_container.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/custom_dialog_header.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/widgets/custom_dialog_text_field.dart';
 
 class CustomDialog extends StatelessWidget {
   const CustomDialog({super.key});
@@ -20,6 +21,7 @@ class CustomDialog extends StatelessWidget {
               CustomDialogHeader(
                 title: 'أدخل مبلغ الهدف',
               ),
+              CustomDialogTextField(),
             ],
           ),
         ),
