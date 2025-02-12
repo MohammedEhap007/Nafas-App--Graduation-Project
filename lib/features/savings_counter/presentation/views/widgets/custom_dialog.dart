@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nafas_app/constant.dart';
-import 'package:nafas_app/core/widgets/custom_button.dart';
 import 'package:nafas_app/core/widgets/custom_container.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/custom_dialog_header.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/custom_dialog_text_field.dart';
@@ -18,17 +17,14 @@ class CustomDialog extends StatelessWidget {
             horizontal: kHorizontalPadding,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomDialogHeader(
                 title: 'أدخل مبلغ الهدف',
               ),
-              CustomDialogTextField(),
-              CustomButton(
-                onPressed: () {},
-                text: 'إضافة الهدف',
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height * 0.02,
               ),
-              SizedBox(height: 30.0),
+              CustomDialogTextField(),
             ],
           ),
         ),
