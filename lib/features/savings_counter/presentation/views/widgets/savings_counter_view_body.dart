@@ -12,33 +12,36 @@ class SavingsCounterViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: kHorizontalPadding,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(title: 'عداد التعافي'),
-          const SizedBox(height: 30),
-          CustomLableShape(lable: 'الهدف المحدد'),
-          SizedBox(
-            height: 12,
-          ),
-          AddFirstGoalButton(),
-          SizedBox(
-            height: 30,
-          ),
-          AddCigarettesButton(),
-          SizedBox(
-            height: 15,
-          ),
-          AddSavingsMoneyButton(),
-          SizedBox(
-            height: 15,
-          ),
-          GoalsSection(),
-        ],
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: kHorizontalPadding,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(title: 'عداد التعافي'),
+            const SizedBox(height: 30),
+            CustomLableShape(lable: 'الهدف المحدد'),
+            SizedBox(
+              height: 12,
+            ),
+            AddFirstGoalButton(),
+            SizedBox(
+              height: 30,
+            ),
+            AddCigarettesButton(),
+            SizedBox(
+              height: 15,
+            ),
+            AddSavingsMoneyButton(),
+            SizedBox(
+              height: 15,
+            ),
+            GoalsSection(),
+          ],
+        ),
       ),
     );
   }

@@ -9,47 +9,51 @@ class GoalsItem extends StatelessWidget {
     super.key,
     required this.goalsItemModel,
     this.onPressed,
+    this.onTap,
   });
 
   final GoalsItemModel goalsItemModel;
   final VoidCallback? onPressed;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return CustomContainer(
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16.0,
-          vertical: 10.0,
-        ),
-        child: Row(
-          children: [
-            Image.asset(
-              goalsItemModel.image,
-              width: 28,
-              height: 28,
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              goalsItemModel.title,
-              style: TextStyles.medium18(context).copyWith(
-                color: AppColors.primaryTextColor,
+    return GestureDetector(
+      onTap: onTap,
+      child: CustomContainer(
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+            vertical: 10.0,
+          ),
+          child: Row(
+            children: [
+              Image.asset(
+                goalsItemModel.image,
+                width: 28,
+                height: 28,
               ),
-            ),
-            Spacer(),
-            IconButton(
-              onPressed: onPressed,
-              icon: Icon(
-                goalsItemModel.icon,
-                color: AppColors.secondaryTextColor,
+              SizedBox(
+                width: 5,
               ),
-              iconSize: 24,
-              
-            )
-          ],
+              Text(
+                goalsItemModel.title,
+                style: TextStyles.medium18(context).copyWith(
+                  color: AppColors.primaryTextColor,
+                ),
+              ),
+              Spacer(),
+              IconButton(
+                onPressed: onPressed,
+                icon: Icon(
+                  goalsItemModel.icon,
+                  color: AppColors.secondaryTextColor,
+                ),
+                iconSize: 24,
+              )
+            ],
+          ),
         ),
       ),
     );

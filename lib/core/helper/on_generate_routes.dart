@@ -4,6 +4,7 @@ import 'package:nafas_app/features/auth/presentation/views/log_in_view.dart';
 import 'package:nafas_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
 import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/empty_achieved_goals_view.dart';
 import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
 
 Route onGenerateRoute(RouteSettings settings) {
@@ -21,6 +22,9 @@ Route onGenerateRoute(RouteSettings settings) {
           builder: (context) => const ForgetPasswordView());
     case NavBarView.routeName:
       return MaterialPageRoute(builder: (context) => const NavBarView());
+    case EmptyAchievedGoalsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const EmptyAchievedGoalsView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
