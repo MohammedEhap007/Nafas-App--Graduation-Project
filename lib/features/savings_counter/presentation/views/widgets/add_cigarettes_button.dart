@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/show_custom_dialog.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/features/savings_counter/data/models/goals_item_model.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/goals_item.dart';
@@ -14,7 +15,14 @@ class AddCigarettesButton extends StatelessWidget {
         title: 'إضافة سجائر لم تُدخن',
         icon: Icons.add,
       ),
-      onPressed: () {},
+      onPressed: () {
+        showCustomDialog(
+          context,
+          dialogTitle: 'أدخل عدد السجائر',
+          dialogTextFieldHintText: 'عدد السجائر',
+          dialogButtonTitle: 'إضافة',
+        );
+      },
     );
   }
 }
