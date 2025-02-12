@@ -12,6 +12,8 @@ class CustomDialog extends StatelessWidget {
     required this.dialogButtonTitle,
     required this.snackBarMessage,
     required this.isContentNeeded,
+    required this.isButtonTwoNeeded,
+    this.buttonTwoTitle,
   });
 
   final String dialogTitle;
@@ -19,12 +21,16 @@ class CustomDialog extends StatelessWidget {
   final String dialogButtonTitle;
   final String snackBarMessage;
   final bool isContentNeeded;
+  final bool isButtonTwoNeeded;
+  final String? buttonTwoTitle;
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
       child: CustomContainer(
-        hight: MediaQuery.sizeOf(context).height * 0.3,
+        hight: isButtonTwoNeeded
+            ? MediaQuery.sizeOf(context).height * 0.425
+            : MediaQuery.sizeOf(context).height * 0.35,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: kHorizontalPadding,
@@ -35,13 +41,17 @@ class CustomDialog extends StatelessWidget {
                 title: dialogTitle,
               ),
               SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.02,
+                height: isButtonTwoNeeded
+                    ? MediaQuery.sizeOf(context).height * 0.07
+                    : MediaQuery.sizeOf(context).height * 0.05,
               ),
               CustomDialogTextField(
                 hintText: dialogTextFieldHintText,
                 buttonTitle: dialogButtonTitle,
                 snackBarMessage: snackBarMessage,
                 isContentNeeded: isContentNeeded,
+                isButtonTwoNeeded: isButtonTwoNeeded,
+                buttonTwoTitle: buttonTwoTitle,
               ),
             ],
           ),

@@ -15,6 +15,10 @@ class Assets {
   /// assets/images/cigarette.png
   static const String imagesCigarette = "assets/images/cigarette.png";
 
+  /// Assets for imagesError
+  /// assets/images/error.png
+  static const String imagesError = "assets/images/error.png";
+
   /// Assets for imagesGoal
   /// assets/images/goal.png
   static const String imagesGoal = "assets/images/goal.png";

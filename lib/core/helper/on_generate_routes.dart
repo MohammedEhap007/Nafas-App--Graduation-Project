@@ -9,6 +9,7 @@ import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_vi
 import 'package:nafas_app/features/setting/presentation/view/account_data_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/privacy_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/rules_view.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/empty_achieved_goals_view.dart';
 import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
 
 Route onGenerateRoute(RouteSettings settings) {
@@ -31,6 +32,9 @@ Route onGenerateRoute(RouteSettings settings) {
 
     case NavBarView.routeName:
       return MaterialPageRoute(builder: (context) => const NavBarView());
+    case EmptyAchievedGoalsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const EmptyAchievedGoalsView());
 
     case MoreVideosView.routeName:
       return MaterialPageRoute(builder: (context) => const MoreVideosView());
