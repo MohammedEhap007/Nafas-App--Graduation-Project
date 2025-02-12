@@ -32,6 +32,7 @@ class AddFirstGoalButton extends StatelessWidget {
                   dialogTitle: 'أدخل مبلغ الهدف',
                   dialogTextFieldHintText: 'المبلغ',
                   dialogButtonTitle: 'إضافة الهدف',
+                  snackBarMessage: 'تم اضافة الهدف بنجاح',
                 );
               },
               child: Text(

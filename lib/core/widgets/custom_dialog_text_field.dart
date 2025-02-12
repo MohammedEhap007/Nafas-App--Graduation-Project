@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/show_custom_snack_bar.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/core/widgets/custom_button.dart';
@@ -8,10 +9,14 @@ class CustomDialogTextField extends StatefulWidget {
     super.key,
     required this.hintText,
     required this.buttonTitle,
+    required this.snackBarMessage,
+    required this.isContentNeeded,
   });
 
   final String hintText;
   final String buttonTitle;
+  final String snackBarMessage;
+  final bool isContentNeeded;
 
   @override
   State<CustomDialogTextField> createState() => _CustomDialogTextFieldState();
@@ -70,10 +75,13 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
             CustomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Processing Data'),
-                    ),
+                  showCustomSnackBar(
+                    context,
+                    message: widget.snackBarMessage,
+                    isSucceeded: true,
+                    content: widget.isContentNeeded
+                        ? _textEditingController.text
+                        : null,
                   );
                   Navigator.pop(context);
                 }

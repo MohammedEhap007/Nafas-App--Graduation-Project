@@ -21,6 +21,8 @@ class AddSavingsMoneyButton extends StatelessWidget {
           dialogTitle: 'أدخل المبلغ',
           dialogTextFieldHintText: 'المبلغ',
           dialogButtonTitle: 'إضافة',
+          snackBarMessage: 'تم اضافة جنيه',
+          isContentNeeded: true,
         );
       },
     );

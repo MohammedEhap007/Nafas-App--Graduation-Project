@@ -21,6 +21,8 @@ class AddCigarettesButton extends StatelessWidget {
           dialogTitle: 'أدخل عدد السجائر',
           dialogTextFieldHintText: 'عدد السجائر',
           dialogButtonTitle: 'إضافة',
+          snackBarMessage: 'تم اضافة سيجارة',
+          isContentNeeded: true,
         );
       },
     );

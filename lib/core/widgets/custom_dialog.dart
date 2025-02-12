@@ -10,11 +10,15 @@ class CustomDialog extends StatelessWidget {
     required this.dialogTitle,
     required this.dialogTextFieldHintText,
     required this.dialogButtonTitle,
+    required this.snackBarMessage,
+    required this.isContentNeeded,
   });
 
   final String dialogTitle;
   final String dialogTextFieldHintText;
   final String dialogButtonTitle;
+  final String snackBarMessage;
+  final bool isContentNeeded;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +40,8 @@ class CustomDialog extends StatelessWidget {
               CustomDialogTextField(
                 hintText: dialogTextFieldHintText,
                 buttonTitle: dialogButtonTitle,
+                snackBarMessage: snackBarMessage,
+                isContentNeeded: isContentNeeded,
               ),
             ],
           ),

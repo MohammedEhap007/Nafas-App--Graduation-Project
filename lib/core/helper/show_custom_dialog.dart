@@ -6,6 +6,8 @@ void showCustomDialog(
   required String dialogTitle,
   required String dialogTextFieldHintText,
   required String dialogButtonTitle,
+  required String snackBarMessage,
+  bool isContentNeeded = false,
 }) {
   showDialog(
     context: context,
@@ -13,6 +15,8 @@ void showCustomDialog(
       dialogTitle: dialogTitle,
       dialogTextFieldHintText: dialogTextFieldHintText,
       dialogButtonTitle: dialogButtonTitle,
+      snackBarMessage: snackBarMessage,
+      isContentNeeded: isContentNeeded,
     ),
   );
 }
