@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:nafas_app/constant.dart';
 import 'package:nafas_app/core/widgets/custom_container.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/custom_dialog_header.dart';
-import 'package:nafas_app/features/savings_counter/presentation/views/widgets/custom_dialog_text_field.dart';
+import 'package:nafas_app/core/widgets/custom_dialog_text_field.dart';
 
 class CustomDialog extends StatelessWidget {
-  const CustomDialog({super.key});
+  const CustomDialog({
+    super.key,
+    required this.dialogTitle,
+    required this.dialogTextFieldHintText,
+    required this.dialogButtonTitle,
+  });
+
+  final String dialogTitle;
+  final String dialogTextFieldHintText;
+  final String dialogButtonTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +28,15 @@ class CustomDialog extends StatelessWidget {
           child: Column(
             children: [
               CustomDialogHeader(
-                title: 'أدخل مبلغ الهدف',
+                title: dialogTitle,
               ),
               SizedBox(
                 height: MediaQuery.sizeOf(context).height * 0.02,
               ),
-              CustomDialogTextField(),
+              CustomDialogTextField(
+                hintText: dialogTextFieldHintText,
+                buttonTitle: dialogButtonTitle,
+              ),
             ],
           ),
         ),

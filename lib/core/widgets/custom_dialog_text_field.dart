@@ -6,7 +6,12 @@ import 'package:nafas_app/core/widgets/custom_button.dart';
 class CustomDialogTextField extends StatefulWidget {
   const CustomDialogTextField({
     super.key,
+    required this.hintText,
+    required this.buttonTitle,
   });
+
+  final String hintText;
+  final String buttonTitle;
 
   @override
   State<CustomDialogTextField> createState() => _CustomDialogTextFieldState();
@@ -43,7 +48,7 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
               cursorColor: AppColors.secondaryTextColor,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                hintText: 'المبلغ',
+                hintText: widget.hintText,
                 hintStyle: TextStyles.medium16(context).copyWith(
                   color: AppColors.secondaryTextColor,
                 ),
@@ -73,7 +78,7 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
                   Navigator.pop(context);
                 }
               },
-              text: 'إضافة الهدف',
+              text: widget.buttonTitle,
             ),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.01,

@@ -27,7 +27,12 @@ class AddFirstGoalButton extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                showCustomDialog(context);
+                showCustomDialog(
+                  context,
+                  dialogTitle: 'أدخل مبلغ الهدف',
+                  dialogTextFieldHintText: 'المبلغ',
+                  dialogButtonTitle: 'إضافة الهدف',
+                );
               },
               child: Text(
                 'إضافة هدف',
