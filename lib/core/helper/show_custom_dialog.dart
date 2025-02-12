@@ -8,6 +8,8 @@ void showCustomDialog(
   required String dialogButtonTitle,
   required String snackBarMessage,
   bool isContentNeeded = false,
+  bool isButtonTwoNeeded = false,
+  String? buttonTwoTitle,
 }) {
   showDialog(
     context: context,
@@ -17,6 +19,8 @@ void showCustomDialog(
       dialogButtonTitle: dialogButtonTitle,
       snackBarMessage: snackBarMessage,
       isContentNeeded: isContentNeeded,
+      isButtonTwoNeeded: isButtonTwoNeeded,
+      buttonTwoTitle: buttonTwoTitle,
     ),
   );
 }

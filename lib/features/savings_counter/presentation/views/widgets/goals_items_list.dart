@@ -19,7 +19,17 @@ class GoalsItemsList extends StatelessWidget {
             image: Assets.imagesPencil,
             title: 'تعديل الهدف الحالي',
           ),
-          onTap: () {},
+          onTap: () {
+            showCustomDialog(
+              context,
+              dialogTitle: 'تعديل الهدف',
+              dialogTextFieldHintText: 'المبلغ الجديد',
+              dialogButtonTitle: 'تعديل الهدف',
+              snackBarMessage: 'تم تعديل الهدف بنجاح',
+              isButtonTwoNeeded: true,
+              buttonTwoTitle: 'حذف الهدف',
+            );
+          },
         ),
         GoalsItem(
           goalsItemModel: GoalsItemModel(

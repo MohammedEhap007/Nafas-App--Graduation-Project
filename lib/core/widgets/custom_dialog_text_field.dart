@@ -11,12 +11,16 @@ class CustomDialogTextField extends StatefulWidget {
     required this.buttonTitle,
     required this.snackBarMessage,
     required this.isContentNeeded,
+    required this.isButtonTwoNeeded,
+    this.buttonTwoTitle,
   });
 
   final String hintText;
   final String buttonTitle;
   final String snackBarMessage;
   final bool isContentNeeded;
+  final bool isButtonTwoNeeded;
+  final String? buttonTwoTitle;
 
   @override
   State<CustomDialogTextField> createState() => _CustomDialogTextFieldState();
@@ -30,49 +34,49 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextFormField(
-              controller: _textEditingController,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return '* ادخل رقم صحيح';
-                }
-                if (value.contains('.') ||
-                    value.contains(',') ||
-                    value.contains('-') ||
-                    value.contains(' ') ||
-                    value.startsWith('0')) {
-                  return '* ادخل رقم صحيح';
-                }
-                return null;
-              },
-              cursorColor: AppColors.secondaryTextColor,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                hintText: widget.hintText,
-                hintStyle: TextStyles.medium16(context).copyWith(
-                  color: AppColors.secondaryTextColor,
-                ),
-                border: buildBorder(),
-                focusedBorder: buildBorder(),
-                enabledBorder: buildBorder(),
-                disabledBorder: buildBorder(),
-                errorBorder: buildErrorBorder(),
-                focusedErrorBorder: buildErrorBorder(),
-                errorStyle: TextStyles.medium16(context).copyWith(
-                  color: AppColors.importantButtonsBackgroundColor,
-                  height: 0,
-                ),
+      child: Column(
+        children: [
+          TextFormField(
+            controller: _textEditingController,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return '* ادخل رقم صحيح';
+              }
+              if (value.contains('.') ||
+                  value.contains(',') ||
+                  value.contains('-') ||
+                  value.contains(' ') ||
+                  value.startsWith('0')) {
+                return '* ادخل رقم صحيح';
+              }
+              return null;
+            },
+            cursorColor: AppColors.secondaryTextColor,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              hintStyle: TextStyles.medium16(context).copyWith(
+                color: AppColors.secondaryTextColor,
+              ),
+              border: buildBorder(),
+              focusedBorder: buildBorder(),
+              enabledBorder: buildBorder(),
+              disabledBorder: buildBorder(),
+              errorBorder: buildErrorBorder(),
+              focusedErrorBorder: buildErrorBorder(),
+              errorStyle: TextStyles.medium16(context).copyWith(
+                color: AppColors.importantButtonsBackgroundColor,
+                height: 0,
               ),
             ),
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.01,
-            ),
-            CustomButton(
+          ),
+          SizedBox(
+            height: MediaQuery.sizeOf(context).height * 0.03,
+          ),
+          SizedBox(
+            height: MediaQuery.sizeOf(context).height * 0.048,
+            child: CustomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   showCustomSnackBar(
@@ -88,11 +92,27 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
               },
               text: widget.buttonTitle,
             ),
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.01,
-            ),
-          ],
-        ),
+          ),
+          widget.isButtonTwoNeeded
+              ? Column(
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.sizeOf(context).height * 0.015,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.sizeOf(context).height * 0.048,
+                      child: CustomButton(
+                        onPressed: () {},
+                        text: widget.buttonTwoTitle!,
+                        isError: true,
+                      ),
+                    ),
+                  ],
+                )
+              : SizedBox(
+                  height: MediaQuery.sizeOf(context).height * 0.015,
+                ),
+        ],
       ),
     );
   }

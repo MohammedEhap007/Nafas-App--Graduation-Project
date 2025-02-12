@@ -7,9 +7,11 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.text,
+    this.isError = false,
   });
   final VoidCallback? onPressed;
   final String text;
+  final bool? isError;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,9 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: isError!
+              ? AppColors.importantButtonsBackgroundColor
+              : AppColors.primaryColor,
         ),
         onPressed: onPressed,
         child: Text(
