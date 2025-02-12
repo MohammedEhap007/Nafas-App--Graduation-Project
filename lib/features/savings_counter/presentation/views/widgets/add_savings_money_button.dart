@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/show_custom_dialog.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/features/savings_counter/data/models/goals_item_model.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/goals_item.dart';
@@ -14,7 +15,16 @@ class AddSavingsMoneyButton extends StatelessWidget {
         title: 'إضافة فلوس وفرتها',
         icon: Icons.add,
       ),
-      onPressed: () {},
+      onPressed: () {
+        showCustomDialog(
+          context,
+          dialogTitle: 'أدخل المبلغ',
+          dialogTextFieldHintText: 'المبلغ',
+          dialogButtonTitle: 'إضافة',
+          snackBarMessage: 'تم اضافة جنيه',
+          isContentNeeded: true,
+        );
+      },
     );
   }
 }
