@@ -17,6 +17,7 @@ class _TapBarListViewState extends State<TapBarListView> {
     'أضرار التدخين',
     'فوائد الإقلاع',
     'ازاي تبطل تدخين',
+    'قصص'
   ];
   int selectedIndex = 0;
   @override
@@ -25,7 +26,8 @@ class _TapBarListViewState extends State<TapBarListView> {
       height: MediaQuery.sizeOf(context).height * 0.1,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 4,
+        physics: BouncingScrollPhysics(),
+        itemCount: tabName.length,
         itemBuilder: (context, index) {
           return FittedBox(
             fit: BoxFit.scaleDown,

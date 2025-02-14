@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/features/setting/data/models/rules_and_privacy_model.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/rules_and_privacy_widget.dart';
 
@@ -35,23 +34,7 @@ class PrivacyViewBody extends StatelessWidget {
     ];
     return Column(
       children: [
-        SizedBox(height: 12),
-        Row(
-          children: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.arrow_back)),
-            Spacer(flex: 1),
-            Text(
-              'سياسة الخصوصية',
-              style: TextStyles.medium20(context),
-            ),
-            Spacer(flex: 1),
-          ],
-        ),
-        SizedBox(height: 41),
+        SizedBox(height: 30),
         Expanded(
           child: ListView.builder(
             itemCount: privacy.length,

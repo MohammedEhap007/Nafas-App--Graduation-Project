@@ -53,14 +53,17 @@ class SettingsActions extends StatelessWidget {
                         title: 'هل حقا تريد حذف الحساب ؟',
                         content:
                             'فور تأكيدك حذف الحساب , سيتم حذف الحساب نهائيا ولا يمكن إيقاف عملية الحذف بمجرد التأكيد.',
-                        button1: CustomButton(onPressed: () {}, text: 'حذف'),
+                        button1: CustomButton(
+                          onPressed: () {},
+                          text: 'حذف',
+                          backgroundColor:
+                              AppColors.importantButtonsBackgroundColor,
+                        ),
                         button2: CustomButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
                           text: 'إلغاء',
-                          backgroundColor:
-                              AppColors.importantButtonsBackgroundColor,
                         ),
                       );
                     },
@@ -118,7 +121,7 @@ class SettingsActions extends StatelessWidget {
               builder: (BuildContext context) {
                 return CustomAlert(
                   title: 'تأكيد تسجيل الخروج',
-                  content: 'هل تريد تسجيل الخروج!  نحن بإنتظار عودتك',
+                  content: 'هل تريد تسجيل الخروج!\nنحن بإنتظار عودتك',
                   button1: CustomButton(
                     onPressed: () {
                       Navigator.pop(context);

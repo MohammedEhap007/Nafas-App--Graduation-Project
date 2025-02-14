@@ -8,6 +8,7 @@ class MoreArticleViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      physics: BouncingScrollPhysics(),
       itemCount: 16,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

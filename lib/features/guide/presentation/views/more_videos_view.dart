@@ -8,22 +8,21 @@ class MoreVideosView extends StatelessWidget {
   static const routeName = 'moreVideosView';
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'عن التدخين',
-            style: TextStyles.medium20(context),
-          ),
-          centerTitle: true,
-          backgroundColor: AppColors.primaryBackgroundColor,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'عن التدخين',
+          style: TextStyles.medium20(context),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-          ),
-          child: MoreVideosViewBody(),
+        centerTitle: true,
+        backgroundColor: AppColors.primaryBackgroundColor,
+        scrolledUnderElevation: 0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
         ),
+        child: MoreVideosViewBody(),
       ),
     );
   }

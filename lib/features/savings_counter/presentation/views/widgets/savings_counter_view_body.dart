@@ -3,9 +3,9 @@ import 'package:nafas_app/constant.dart';
 import 'package:nafas_app/core/widgets/custom_app_bar.dart';
 import 'package:nafas_app/features/home/presentation/views/widgets/custom_lable_shape.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_cigarettes_button.dart';
-import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_first_goal_button.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_savings_money_button.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/goals_section.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/widgets/savings_progress_bar.dart';
 
 class SavingsCounterViewBody extends StatelessWidget {
   const SavingsCounterViewBody({super.key});
@@ -27,7 +27,8 @@ class SavingsCounterViewBody extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            AddFirstGoalButton(),
+            //AddFirstGoalButton(),
+            SavingsProgressBar(savedAmount: 600, goalAmount: 1000),
             SizedBox(
               height: 30,
             ),

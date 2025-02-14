@@ -10,6 +10,7 @@ class VideosListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.sizeOf(context).height * 0.25,
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {

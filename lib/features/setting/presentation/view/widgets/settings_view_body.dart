@@ -9,14 +9,15 @@ class SettingsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          SizedBox(height: 11),
+          SizedBox(height: 10),
           Text(
             'الملف الشخصي',
             style: TextStyles.medium20(context),
           ),
-          SizedBox(height: 41),
+          SizedBox(height: 30),
           CircleAvatar(
             radius: 60,
             backgroundImage: AssetImage(Assets.imagesSelfieAvatar),

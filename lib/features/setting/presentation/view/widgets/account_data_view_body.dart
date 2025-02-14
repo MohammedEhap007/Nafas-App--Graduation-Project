@@ -13,23 +13,7 @@ class AccountDataViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 12),
-        Row(
-          children: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.arrow_back)),
-            Spacer(flex: 1),
-            Text(
-              'الشروط والأحكام',
-              style: TextStyles.medium20(context),
-            ),
-            Spacer(flex: 1),
-          ],
-        ),
-        SizedBox(height: 41),
+        SizedBox(height: 30),
         CircleAvatar(
           radius: 60,
           backgroundImage: AssetImage(Assets.imagesSelfieAvatar),
