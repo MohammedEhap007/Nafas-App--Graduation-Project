@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nafas_app/core/helper/show_custom_dialog.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/features/savings_counter/data/models/goals_item_model.dart';
+import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/goals_item.dart';
 
 class AddCigarettesButton extends StatelessWidget {
@@ -23,6 +25,8 @@ class AddCigarettesButton extends StatelessWidget {
           dialogButtonTitle: 'إضافة',
           snackBarMessage: 'تم اضافة سيجارة',
           isContentNeeded: true,
+          onPressedCubitAction:
+              context.read<SavingsCounterCubit>().updateCigarettesAmount,
         );
       },
     );

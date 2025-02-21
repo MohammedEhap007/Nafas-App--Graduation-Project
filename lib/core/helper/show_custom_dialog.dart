@@ -10,6 +10,7 @@ void showCustomDialog(
   bool isContentNeeded = false,
   bool isButtonTwoNeeded = false,
   String? buttonTwoTitle,
+  void Function(double)? onPressedCubitAction,
 }) {
   showDialog(
     context: context,
@@ -21,6 +22,7 @@ void showCustomDialog(
       isContentNeeded: isContentNeeded,
       isButtonTwoNeeded: isButtonTwoNeeded,
       buttonTwoTitle: buttonTwoTitle,
+      onPressedCubitAction: onPressedCubitAction,
     ),
   );
 }

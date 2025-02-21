@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nafas_app/constant.dart';
 import 'package:nafas_app/core/widgets/custom_app_bar.dart';
 import 'package:nafas_app/features/home/presentation/views/widgets/custom_lable_shape.dart';
+import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_cigarettes_button.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_first_goal_button.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/add_savings_money_button.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/goals_section.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/widgets/savings_progress_bar.dart';
@@ -27,8 +30,18 @@ class SavingsCounterViewBody extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            //AddFirstGoalButton(),
-            SavingsProgressBar(savedAmount: 600, goalAmount: 1000),
+            BlocBuilder<SavingsCounterCubit, SavingsCounterState>(
+              builder: (context, state) {
+                if (state.goalAmount == 0) {
+                  return AddFirstGoalButton();
+                } else {
+                  return SavingsProgressBar(
+                    savedAmount: state.currentSavings,
+                    goalAmount: state.goalAmount,
+                  );
+                }
+              },
+            ),
             SizedBox(
               height: 30,
             ),

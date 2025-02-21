@@ -2,6 +2,7 @@ C/C++ Structured Logd
 b
 `C:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\additional_project_files.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	Á‚©ÍÒ2 ·ä†ÍÒ2a
 _
 ]C:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\android_gradle_build.json	Â‚©ÍÒ2  Áä†ÍÒ2f
@@ -26,3 +27,29 @@ VC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\prefab_conf
 [C:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\symbol_folder_index.txt	Â‚©ÍÒ2R Îä†ÍÒ2Y
 W
 UC:\Workspace\Sdk\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txt	Â‚©ÍÒ2§ ‚ÀàìÑ2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ÅïöÒÒ2 ÔÖ­ÐÒ2a
+_
+]C:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\android_gradle_build.json	ÅïöÒÒ2  ×Ö­ÐÒ2f
+d
+bC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\android_gradle_build_mini.json	ÅïöÒÒ2 ÝÖ­ÐÒ2S
+Q
+OC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\build.ninja	ÅïöÒÒ2­Ï ŒÖ­ÐÒ2W
+U
+SC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\build.ninja.txt	ÅïöÒÒ2\
+Z
+XC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\build_file_index.txt	ÅïöÒÒ2U æÖ­ÐÒ2]
+[
+YC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\compile_commands.json	ÅïöÒÒ2a
+_
+]C:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\compile_commands.json.bin	ÅïöÒÒ2	g
+e
+cC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\metadata_generation_command.txt	ÅïöÒÒ2
+  àÖ­ÐÒ2Z
+X
+VC:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\prefab_config.json	ÅïöÒÒ2( ãÖ­ÐÒ2_
+]
+[C:\Workspace\Projects\nafas_app\android\app\.cxx\Debug\53496ru2\x86\symbol_folder_index.txt	ÅïöÒÒ2R åÖ­ÐÒ2Y
+W
+UC:\Workspace\Sdk\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txt	ÅïöÒÒ2§ ‚ÀàìÑ2
+>>>>>>> features/savings_counter
