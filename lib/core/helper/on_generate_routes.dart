@@ -32,6 +32,7 @@ Route onGenerateRoute(RouteSettings settings) {
 
     case NavBarView.routeName:
       return MaterialPageRoute(builder: (context) => const NavBarView());
+
     case EmptyAchievedGoalsView.routeName:
       return MaterialPageRoute(
           builder: (context) => const EmptyAchievedGoalsView());

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nafas_app/core/helper/show_custom_alert_dialog.dart';
 import 'package:nafas_app/core/helper/show_custom_snack_bar.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/core/widgets/custom_button.dart';
+import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
 
 class CustomDialogTextField extends StatefulWidget {
   const CustomDialogTextField({
@@ -14,6 +16,7 @@ class CustomDialogTextField extends StatefulWidget {
     required this.isContentNeeded,
     required this.isButtonTwoNeeded,
     this.buttonTwoTitle,
+    this.onPressedCubitAction,
   });
 
   final String hintText;
@@ -22,6 +25,7 @@ class CustomDialogTextField extends StatefulWidget {
   final bool isContentNeeded;
   final bool isButtonTwoNeeded;
   final String? buttonTwoTitle;
+  final void Function(double)? onPressedCubitAction;
 
   @override
   State<CustomDialogTextField> createState() => _CustomDialogTextFieldState();
@@ -89,6 +93,8 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
                         : null,
                   );
                   Navigator.pop(context);
+                  widget.onPressedCubitAction!(
+                      double.parse(_textEditingController.text));
                 }
               },
               text: widget.buttonTitle,
@@ -110,7 +116,10 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
                             alertDialogContent:
                                 'لن تتمكن من استعادة الهدف بعد الحذف!',
                             alertDialogButtonOneTitle: 'حذف',
-                            alertDialogButtonOneOnPressed: () {},
+                            alertDialogButtonOneOnPressed: () {
+                              context.read<SavingsCounterCubit>().deleteGoal();
+                              Navigator.pop(context);
+                            },
                             alertDialogButtonTwoTitle: 'الغاء',
                           );
                         },

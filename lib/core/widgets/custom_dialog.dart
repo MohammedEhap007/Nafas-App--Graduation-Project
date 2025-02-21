@@ -14,6 +14,7 @@ class CustomDialog extends StatelessWidget {
     required this.isContentNeeded,
     required this.isButtonTwoNeeded,
     this.buttonTwoTitle,
+    this.onPressedCubitAction,
   });
 
   final String dialogTitle;
@@ -23,6 +24,7 @@ class CustomDialog extends StatelessWidget {
   final bool isContentNeeded;
   final bool isButtonTwoNeeded;
   final String? buttonTwoTitle;
+  final void Function(double)? onPressedCubitAction;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +54,7 @@ class CustomDialog extends StatelessWidget {
                 isContentNeeded: isContentNeeded,
                 isButtonTwoNeeded: isButtonTwoNeeded,
                 buttonTwoTitle: buttonTwoTitle,
+                onPressedCubitAction: onPressedCubitAction,
               ),
             ],
           ),
