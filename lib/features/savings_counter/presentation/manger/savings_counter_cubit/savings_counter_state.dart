@@ -3,12 +3,14 @@ part of 'savings_counter_cubit.dart';
 class SavingsCounterState extends Equatable {
   final double goalAmount;
   final double currentSavings;
+  final double totalSavings;
   final double unsmokedCigarettesAmount;
   final bool isGoalCompleted;
 
   const SavingsCounterState({
     required this.goalAmount,
     required this.currentSavings,
+    required this.totalSavings,
     required this.unsmokedCigarettesAmount,
     required this.isGoalCompleted,
   });
@@ -17,6 +19,7 @@ class SavingsCounterState extends Equatable {
     return const SavingsCounterState(
       goalAmount: 0,
       currentSavings: 0,
+      totalSavings: 0,
       unsmokedCigarettesAmount: 0,
       isGoalCompleted: false,
     );
@@ -25,12 +28,14 @@ class SavingsCounterState extends Equatable {
   SavingsCounterState copyWith({
     double? goalAmount,
     double? currentSavings,
+    double? totalSavings,
     double? unsmokedCigarettesAmount,
     bool? isGoalCompleted,
   }) {
     return SavingsCounterState(
       goalAmount: goalAmount ?? this.goalAmount,
       currentSavings: currentSavings ?? this.currentSavings,
+      totalSavings: totalSavings ?? this.totalSavings,
       unsmokedCigarettesAmount:
           unsmokedCigarettesAmount ?? this.unsmokedCigarettesAmount,
       isGoalCompleted: isGoalCompleted ?? this.isGoalCompleted,
@@ -38,6 +43,11 @@ class SavingsCounterState extends Equatable {
   }
 
   @override
-  List<Object> get props =>
-      [goalAmount, currentSavings, unsmokedCigarettesAmount, isGoalCompleted];
+  List<Object> get props => [
+        goalAmount,
+        currentSavings,
+        totalSavings,
+        unsmokedCigarettesAmount,
+        isGoalCompleted
+      ];
 }

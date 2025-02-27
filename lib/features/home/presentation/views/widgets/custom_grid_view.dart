@@ -18,7 +18,7 @@ class CustomCounterGridView extends StatelessWidget {
       CounterModel(
         image: Assets.imagesMoneyBox,
         count:
-            '${context.read<SavingsCounterCubit>().state.currentSavings.toInt()} جنيه',
+            '${context.read<SavingsCounterCubit>().state.totalSavings.toInt()} جنيه',
         title: 'المبلغ المُوفّر',
       ),
       CounterModel(
@@ -29,7 +29,8 @@ class CustomCounterGridView extends StatelessWidget {
       ),
       CounterModel(
         image: Assets.imagesGoal,
-        count: '${context.read<SavingsCounterCubit>().state.goalAmount.toInt()} جنيه',
+        count:
+            '${context.read<SavingsCounterCubit>().state.goalAmount.toInt()} جنيه',
         title: 'الهدف المحدد',
       ),
       CounterModel(
