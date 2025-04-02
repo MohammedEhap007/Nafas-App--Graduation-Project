@@ -4,7 +4,10 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
+import 'package:nafas_app/features/guide/presentation/views/guide_view.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
+import 'package:nafas_app/features/savings_counter/presentation/views/savings_counter_view.dart';
+import 'package:nafas_app/features/setting/presentation/view/settings_view.dart';
 
 class NavBarView extends StatefulWidget {
   const NavBarView({super.key});
@@ -18,9 +21,9 @@ class _NavBarViewState extends State<NavBarView> {
   int selectedIndex = 0;
   static const List<Widget> pages = [
     HomeView(),
-    HomeView(),
-    HomeView(),
-    Scaffold(),
+    SavingsCounterView(),
+    GuideView(),
+    SettingsView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -65,12 +68,12 @@ class _NavBarViewState extends State<NavBarView> {
                 ),
                 icon: Icons.circle,
                 iconSize: 0,
-                text: 'الرئيسيه',
+                text: 'الرئيسية',
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: AppColors.secondaryColor,
                 ),
-                rippleColor: AppColors.secondaryColor.withOpacity(0.1),
-                backgroundColor: AppColors.secondaryColor.withOpacity(0.1),
+                rippleColor: AppColors.secondaryColor.withAlpha(25),
+                backgroundColor: AppColors.secondaryColor.withAlpha(25),
               ),
               GButton(
                 leading: SvgPicture.asset(
@@ -90,8 +93,8 @@ class _NavBarViewState extends State<NavBarView> {
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Color(0xff00AF6A),
                 ),
-                rippleColor: Color(0xff00AF6A).withOpacity(0.1),
-                backgroundColor: Color(0xff00AF6A).withOpacity(0.1),
+                rippleColor: Color(0xff00AF6A).withAlpha(25),
+                backgroundColor: Color(0xff00AF6A).withAlpha(25),
               ),
               GButton(
                 leading: SvgPicture.asset(
@@ -111,8 +114,8 @@ class _NavBarViewState extends State<NavBarView> {
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Color(0xff7F00FF),
                 ),
-                rippleColor: Color(0xff7F00FF).withOpacity(0.1),
-                backgroundColor: Color(0xff7F00FF).withOpacity(0.1),
+                rippleColor: Color(0xff7F00FF).withAlpha(25),
+                backgroundColor: Color(0xff7F00FF).withAlpha(25),
               ),
               GButton(
                 leading: SvgPicture.asset(
@@ -132,8 +135,8 @@ class _NavBarViewState extends State<NavBarView> {
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Colors.black,
                 ),
-                rippleColor: Colors.black.withOpacity(0.1),
-                backgroundColor: Colors.black.withOpacity(0.1),
+                rippleColor: Colors.black.withAlpha(25),
+                backgroundColor: Colors.black.withAlpha(25),
               ),
             ],
             selectedIndex: selectedIndex,
