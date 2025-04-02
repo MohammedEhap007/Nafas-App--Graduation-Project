@@ -3,24 +3,27 @@ import 'package:hive/hive.dart';
 part 'savings_counter_model.g.dart';
 
 @HiveType(typeId: 0)
-class SavingsCounterModel extends HiveObject {
+class SavingsCounterModel {
   @HiveField(0)
-  double goalAmount;
+  final double goalAmount;
 
   @HiveField(1)
-  double currentSavings;
+  final double currentSavings;
 
   @HiveField(2)
-  double totalSavings;
+  final double totalSavings;
 
   @HiveField(3)
-  double unsmokedCigarettesAmount;
+  final double unsmokedCigarettesAmount;
 
   @HiveField(4)
-  bool isGoalCompleted;
+  final bool isGoalCompleted;
 
   @HiveField(5)
-  int completedGoalsCount;
+  final int completedGoalsCount;
+
+  @HiveField(6)
+  final List<double> completedGoals; // Store completed goals separately
 
   SavingsCounterModel({
     required this.goalAmount,
@@ -28,6 +31,8 @@ class SavingsCounterModel extends HiveObject {
     required this.totalSavings,
     required this.unsmokedCigarettesAmount,
     required this.isGoalCompleted,
-    this.completedGoalsCount = 0,
+    required this.completedGoalsCount,
+    required this.completedGoals,
   });
 }
+

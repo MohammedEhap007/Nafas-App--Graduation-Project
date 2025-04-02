@@ -6,7 +6,7 @@ import 'package:nafas_app/features/savings_counter/presentation/views/widgets/em
 class EmptyAchievedGoalsView extends StatelessWidget {
   const EmptyAchievedGoalsView({super.key});
 
-  static const routeName = 'EmptyAchievedGoalsView';
+  static const routeName = 'emptyAchievedGoalsView';
 
   @override
   Widget build(BuildContext context) {

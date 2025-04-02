@@ -16,16 +16,15 @@ class SavingsCounterCubit extends Cubit<SavingsCounterState> {
     if (savingsBox.isNotEmpty) {
       final savedState = savingsBox.get('savings');
       if (savedState != null) {
-        emit(
-          SavingsCounterState(
-            goalAmount: savedState.goalAmount,
-            currentSavings: savedState.currentSavings,
-            totalSavings: savedState.totalSavings,
-            unsmokedCigarettesAmount: savedState.unsmokedCigarettesAmount,
-            isGoalCompleted: savedState.isGoalCompleted,
-            completedGoalsCount: savedState.completedGoalsCount,
-          ),
-        );
+        emit(SavingsCounterState(
+          goalAmount: savedState.goalAmount,
+          currentSavings: savedState.currentSavings,
+          totalSavings: savedState.totalSavings,
+          unsmokedCigarettesAmount: savedState.unsmokedCigarettesAmount,
+          isGoalCompleted: savedState.isGoalCompleted,
+          completedGoalsCount: savedState.completedGoalsCount,
+          completedGoals: savedState.completedGoals,
+        ));
       }
     }
   }
@@ -38,6 +37,7 @@ class SavingsCounterCubit extends Cubit<SavingsCounterState> {
       unsmokedCigarettesAmount: state.unsmokedCigarettesAmount,
       isGoalCompleted: state.isGoalCompleted,
       completedGoalsCount: state.completedGoalsCount,
+      completedGoals: state.completedGoals,
     );
     savingsBox.put('savings', model);
   }
@@ -67,16 +67,20 @@ class SavingsCounterCubit extends Cubit<SavingsCounterState> {
   void updateSavings(double amount) {
     final newSavings = state.currentSavings + amount;
     final isCompleted = newSavings >= state.goalAmount;
-    final newCompletedGoalsCount = isCompleted && !state.isGoalCompleted
-        ? state.completedGoalsCount + 1
-        : state.completedGoalsCount;
+
+    List<double> updatedCompletedGoals = List.from(state.completedGoals);
+
+    if (isCompleted && !state.isGoalCompleted) {
+      updatedCompletedGoals.add(state.goalAmount);
+    }
 
     emit(
       state.copyWith(
         currentSavings: newSavings,
         totalSavings: state.totalSavings + amount,
         isGoalCompleted: isCompleted,
-        completedGoalsCount: newCompletedGoalsCount,
+        completedGoalsCount: updatedCompletedGoals.length,
+        completedGoals: updatedCompletedGoals,
       ),
     );
     _saveState();

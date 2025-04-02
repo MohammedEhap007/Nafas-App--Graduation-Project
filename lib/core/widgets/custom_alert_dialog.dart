@@ -39,7 +39,7 @@ class CustomAlertDialog extends StatelessWidget {
               backgroundColor: Color(0XFFFF4D4D),
               radius: 30,
               child: SvgPicture.asset(
-                Assets.warningAvatar,
+                Assets.imagesWarningAvatar,
               ),
             ),
             SizedBox(height: 30),

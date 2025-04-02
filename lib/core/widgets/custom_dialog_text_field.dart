@@ -119,6 +119,7 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
                             alertDialogButtonOneOnPressed: () {
                               context.read<SavingsCounterCubit>().deleteGoal();
                               Navigator.pop(context);
+                              Navigator.pop(context);
                             },
                             alertDialogButtonTwoTitle: 'الغاء',
                           );
