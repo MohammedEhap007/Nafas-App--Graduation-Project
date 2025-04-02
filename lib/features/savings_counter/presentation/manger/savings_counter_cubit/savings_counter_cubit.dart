@@ -16,13 +16,16 @@ class SavingsCounterCubit extends Cubit<SavingsCounterState> {
     if (savingsBox.isNotEmpty) {
       final savedState = savingsBox.get('savings');
       if (savedState != null) {
-        emit(SavingsCounterState(
-          goalAmount: savedState.goalAmount,
-          currentSavings: savedState.currentSavings,
-          totalSavings: savedState.totalSavings,
-          unsmokedCigarettesAmount: savedState.unsmokedCigarettesAmount,
-          isGoalCompleted: savedState.isGoalCompleted,
-        ));
+        emit(
+          SavingsCounterState(
+            goalAmount: savedState.goalAmount,
+            currentSavings: savedState.currentSavings,
+            totalSavings: savedState.totalSavings,
+            unsmokedCigarettesAmount: savedState.unsmokedCigarettesAmount,
+            isGoalCompleted: savedState.isGoalCompleted,
+            completedGoalsCount: savedState.completedGoalsCount,
+          ),
+        );
       }
     }
   }
@@ -34,6 +37,7 @@ class SavingsCounterCubit extends Cubit<SavingsCounterState> {
       totalSavings: state.totalSavings,
       unsmokedCigarettesAmount: state.unsmokedCigarettesAmount,
       isGoalCompleted: state.isGoalCompleted,
+      completedGoalsCount: state.completedGoalsCount,
     );
     savingsBox.put('savings', model);
   }
@@ -63,12 +67,16 @@ class SavingsCounterCubit extends Cubit<SavingsCounterState> {
   void updateSavings(double amount) {
     final newSavings = state.currentSavings + amount;
     final isCompleted = newSavings >= state.goalAmount;
+    final newCompletedGoalsCount = isCompleted && !state.isGoalCompleted
+        ? state.completedGoalsCount + 1
+        : state.completedGoalsCount;
 
     emit(
       state.copyWith(
         currentSavings: newSavings,
         totalSavings: state.totalSavings + amount,
         isGoalCompleted: isCompleted,
+        completedGoalsCount: newCompletedGoalsCount,
       ),
     );
     _saveState();

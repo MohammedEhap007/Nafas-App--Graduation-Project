@@ -19,11 +19,15 @@ class SavingsCounterModel extends HiveObject {
   @HiveField(4)
   bool isGoalCompleted;
 
+  @HiveField(5)
+  int completedGoalsCount;
+
   SavingsCounterModel({
     required this.goalAmount,
     required this.currentSavings,
     required this.totalSavings,
     required this.unsmokedCigarettesAmount,
     required this.isGoalCompleted,
+    this.completedGoalsCount = 0,
   });
 }

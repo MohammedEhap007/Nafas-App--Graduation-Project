@@ -35,7 +35,8 @@ class CustomCounterGridView extends StatelessWidget {
       ),
       CounterModel(
         image: Assets.imagesInspection,
-        count: '10 هدف',
+        count:
+            '${context.read<SavingsCounterCubit>().state.completedGoalsCount}',
         title: 'الأهداف المكتمله',
       ),
     ];

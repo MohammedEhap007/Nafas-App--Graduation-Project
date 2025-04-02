@@ -6,6 +6,7 @@ class SavingsCounterState extends Equatable {
   final double totalSavings;
   final double unsmokedCigarettesAmount;
   final bool isGoalCompleted;
+  final int completedGoalsCount;
 
   const SavingsCounterState({
     required this.goalAmount,
@@ -13,6 +14,7 @@ class SavingsCounterState extends Equatable {
     required this.totalSavings,
     required this.unsmokedCigarettesAmount,
     required this.isGoalCompleted,
+    required this.completedGoalsCount,
   });
 
   factory SavingsCounterState.initial() {
@@ -22,6 +24,7 @@ class SavingsCounterState extends Equatable {
       totalSavings: 0,
       unsmokedCigarettesAmount: 0,
       isGoalCompleted: false,
+      completedGoalsCount: 0,
     );
   }
 
@@ -31,6 +34,7 @@ class SavingsCounterState extends Equatable {
     double? totalSavings,
     double? unsmokedCigarettesAmount,
     bool? isGoalCompleted,
+    int? completedGoalsCount,
   }) {
     return SavingsCounterState(
       goalAmount: goalAmount ?? this.goalAmount,
@@ -39,6 +43,7 @@ class SavingsCounterState extends Equatable {
       unsmokedCigarettesAmount:
           unsmokedCigarettesAmount ?? this.unsmokedCigarettesAmount,
       isGoalCompleted: isGoalCompleted ?? this.isGoalCompleted,
+      completedGoalsCount: completedGoalsCount ?? this.completedGoalsCount,
     );
   }
 
@@ -48,6 +53,7 @@ class SavingsCounterState extends Equatable {
         currentSavings,
         totalSavings,
         unsmokedCigarettesAmount,
-        isGoalCompleted
+        isGoalCompleted,
+        completedGoalsCount,
       ];
 }

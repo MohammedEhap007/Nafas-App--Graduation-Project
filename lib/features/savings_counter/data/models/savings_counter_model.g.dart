@@ -22,13 +22,14 @@ class SavingsCounterModelAdapter extends TypeAdapter<SavingsCounterModel> {
       totalSavings: fields[2] as double,
       unsmokedCigarettesAmount: fields[3] as double,
       isGoalCompleted: fields[4] as bool,
+      completedGoalsCount: fields[5] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, SavingsCounterModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.goalAmount)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class SavingsCounterModelAdapter extends TypeAdapter<SavingsCounterModel> {
       ..writeByte(3)
       ..write(obj.unsmokedCigarettesAmount)
       ..writeByte(4)
-      ..write(obj.isGoalCompleted);
+      ..write(obj.isGoalCompleted)
+      ..writeByte(5)
+      ..write(obj.completedGoalsCount);
   }
 
   @override
