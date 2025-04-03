@@ -18,8 +18,8 @@ class GuideRepoImpl implements GuideRepo {
         endPoint: 'Videos/$category',
       );
       List<VideosModel> videos = [];
-      for (var item in data['items']) {
-        videos.add(VideosModel.fromJson(item));
+      for (var video in data) {
+        videos.add(VideosModel.fromJson(video));
       }
       return right(videos);
     } catch (e) {

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
+import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos_cubit.dart';
 import 'package:nafas_app/features/guide/presentation/views/guide_view.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
 import 'package:nafas_app/features/savings_counter/presentation/views/savings_counter_view.dart';
@@ -144,6 +146,9 @@ class _NavBarViewState extends State<NavBarView> {
             onTabChange: (index) {
               setState(() {
                 selectedIndex = index;
+                if (index == 2) {
+                  context.read<VideosCubit>().fetchVideos(category: 'About');
+                }
               });
             },
           ),

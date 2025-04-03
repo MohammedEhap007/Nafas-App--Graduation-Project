@@ -6,6 +6,8 @@ import 'package:nafas_app/core/helper/on_generate_routes.dart';
 import 'package:nafas_app/core/helper/service_locator.dart';
 import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
+import 'package:nafas_app/features/guide/data/repos/guide_repo_impl.dart';
+import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos_cubit.dart';
 import 'package:nafas_app/features/savings_counter/data/models/savings_counter_model.dart';
 import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
 import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
@@ -26,8 +28,17 @@ class NafasApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SavingsCounterCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => SavingsCounterCubit(),
+        ),
+        BlocProvider(
+          create: (context) => VideosCubit(
+            getIt.get<GuideRepoImpl>(),
+          )..fetchVideos(category: 'About'),
+        ),
+      ],
       child: MaterialApp(
         theme: ThemeData(
           fontFamily: 'Tajawal',
