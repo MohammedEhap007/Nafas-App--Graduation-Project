@@ -22,25 +22,40 @@ class GuideViewBody extends StatelessWidget {
             style: TextStyles.medium20(context),
           ),
           SizedBox(height: 35),
-          TapBarListView(),
-          SizedBox(height: 32),
-          CustomLableSection(
-            lable: 'الفيديوهات',
-            onTap: () {
-              Navigator.pushNamed(context, MoreVideosView.routeName);
-            },
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: TapBarListView(),
           ),
           SizedBox(height: 32),
-          VideosListView(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: CustomLableSection(
+              lable: 'الفيديوهات',
+              onTap: () {
+                Navigator.pushNamed(context, MoreVideosView.routeName);
+              },
+            ),
+          ),
+          SizedBox(height: 32),
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: VideosListView(),
+          ),
           SizedBox(height: 16),
-          CustomLableSection(
-            lable: 'المقالات',
-            onTap: () {
-              Navigator.pushNamed(context, MoreArticlesView.routeName);
-            },
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: CustomLableSection(
+              lable: 'المقالات',
+              onTap: () {
+                Navigator.pushNamed(context, MoreArticlesView.routeName);
+              },
+            ),
           ),
           SizedBox(height: 32),
-          ArticlesListView(),
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: ArticlesListView(),
+          ),
           SizedBox(height: 35),
         ],
       ),

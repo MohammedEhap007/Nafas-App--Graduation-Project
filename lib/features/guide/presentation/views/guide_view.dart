@@ -8,12 +8,7 @@ class GuideView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-          ),
-          child: GuideViewBody(),
-        ),
+        body: GuideViewBody(),
       ),
     );
   }
