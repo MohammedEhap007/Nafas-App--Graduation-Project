@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
+import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/features/guide/presentation/views/guide_view.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
@@ -119,7 +120,7 @@ class _NavBarViewState extends State<NavBarView> {
               ),
               GButton(
                 leading: SvgPicture.asset(
-                  AppCustomIcons.lastIconInNavBar,
+                  Assets.imagesSettings,
                   height: 24,
                   width: 24,
                   colorFilter: ColorFilter.mode(
@@ -131,7 +132,7 @@ class _NavBarViewState extends State<NavBarView> {
                 ),
                 icon: Icons.circle,
                 iconSize: 0,
-                text: 'التجارب',
+                text: 'الإعدادات',
                 textStyle: TextStyles.medium12(context).copyWith(
                   color: Colors.black,
                 ),

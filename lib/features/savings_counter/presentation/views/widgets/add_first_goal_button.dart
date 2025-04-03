@@ -7,7 +7,14 @@ import 'package:nafas_app/core/widgets/custom_container.dart';
 import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
 
 class AddFirstGoalButton extends StatelessWidget {
-  const AddFirstGoalButton({super.key});
+  const AddFirstGoalButton({
+    super.key,
+    required this.text,
+    required this.subText,
+  });
+
+  final String text;
+  final String subText;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,7 @@ class AddFirstGoalButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'ليس لديك أي أهداف بعد',
+              text,
               style: TextStyles.medium20(context).copyWith(
                 color: AppColors.primaryTextColor,
               ),
@@ -40,7 +47,7 @@ class AddFirstGoalButton extends StatelessWidget {
                 );
               },
               child: Text(
-                'إضافة هدف',
+                subText,
                 style: TextStyles.medium20(context).copyWith(
                   color: AppColors.primaryColor,
                 ),

@@ -33,7 +33,15 @@ class SavingsCounterViewBody extends StatelessWidget {
             BlocBuilder<SavingsCounterCubit, SavingsCounterState>(
               builder: (context, state) {
                 if (state.goalAmount == 0) {
-                  return AddFirstGoalButton();
+                  return AddFirstGoalButton(
+                    text: 'ليس لديك أي أهداف بعد',
+                    subText: 'إضافة هدف',
+                  );
+                } else if (state.isGoalCompleted) {
+                  return AddFirstGoalButton(
+                    text: 'تم إنجاز الهدف بنجاح! 🎯',
+                    subText: 'إضافة هدف جديد',
+                  );
                 } else {
                   return SavingsProgressBar(
                     savedAmount: state.currentSavings,
