@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nafas_app/core/helper/on_generate_routes.dart';
+import 'package:nafas_app/core/helper/service_locator.dart';
 import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/features/savings_counter/data/models/savings_counter_model.dart';
@@ -16,6 +17,7 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(SavingsCounterModelAdapter());
   await Hive.openBox<SavingsCounterModel>('savingsBox');
+  setupServiceLocator();
   runApp(const NafasApp());
 }
 

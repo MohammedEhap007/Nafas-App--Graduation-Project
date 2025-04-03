@@ -8,7 +8,7 @@ import 'package:nafas_app/features/guide/data/repos/guide_repo.dart';
 class GuideRepoImpl implements GuideRepo {
   final ApiService apiService;
 
-  GuideRepoImpl({required this.apiService});
+  GuideRepoImpl(this.apiService);
   @override
   Future<Either<Failure, List<VideosModel>>> fetchVideos({
     required String category,
