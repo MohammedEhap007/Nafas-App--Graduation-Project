@@ -18,7 +18,20 @@ class VideosListView extends StatelessWidget {
             padding: const EdgeInsets.only(left: 12),
             child: Column(
               children: [
-                Image.asset(Assets.imagesVideoTestImage),
+                GestureDetector(
+                  onTap: () {},
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset(Assets.imagesVideoTestImage),
+                      Icon(
+                        Icons.play_arrow_rounded,
+                        size: 32,
+                        color: Colors.white.withAlpha(200),
+                      )
+                    ],
+                  ),
+                ),
                 SizedBox(height: 13),
                 Text(
                   'لا تتوقف عن التدخين - كتاب هاري الدر',

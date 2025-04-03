@@ -32,7 +32,7 @@ class GuideViewBody extends StatelessWidget {
           ),
           SizedBox(height: 32),
           VideosListView(),
-          SizedBox(height: 50),
+          SizedBox(height: 16),
           CustomLableSection(
             lable: 'المقالات',
             onTap: () {
@@ -41,6 +41,7 @@ class GuideViewBody extends StatelessWidget {
           ),
           SizedBox(height: 32),
           ArticlesListView(),
+          SizedBox(height: 35),
         ],
       ),
     );
