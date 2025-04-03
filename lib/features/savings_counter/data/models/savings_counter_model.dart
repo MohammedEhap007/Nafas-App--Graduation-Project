@@ -35,4 +35,3 @@ class SavingsCounterModel {
     required this.completedGoals,
   });
 }
-
