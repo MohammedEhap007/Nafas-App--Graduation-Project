@@ -150,6 +150,10 @@ class Assets {
   /// assets/images/selfie_avatar.png
   static const String imagesSelfieAvatar = "assets/images/selfie_avatar.png";
 
+  /// Assets for imagesSettings
+  /// assets/images/settings.svg
+  static const String imagesSettings = "assets/images/settings.svg";
+
   /// Assets for imagesSplashLogo
   /// assets/images/splash_logo.png
   static const String imagesSplashLogo = "assets/images/splash_logo.png";
