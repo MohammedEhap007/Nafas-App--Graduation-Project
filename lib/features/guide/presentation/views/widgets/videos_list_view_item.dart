@@ -1,14 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/launch_url.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 
 class VideosListViewItem extends StatelessWidget {
   const VideosListViewItem({
     super.key,
+    required this.videoUrl,
     required this.imageUrl,
     required this.title,
   });
 
+  final String videoUrl;
   final String imageUrl;
   final String title;
 
@@ -17,7 +20,9 @@ class VideosListViewItem extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            launchCustomUrl(context, videoUrl);
+          },
           child: Stack(
             alignment: Alignment.center,
             children: [

@@ -9,6 +9,7 @@ class VideosListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return BlocBuilder<VideosCubit, VideosState>(
       builder: (context, state) {
         if (state is VideosSuccess) {
@@ -22,6 +23,7 @@ class VideosListView extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(left: 12),
                   child: VideosListViewItem(
+                    videoUrl: state.videos[index].url!,
                     imageUrl: state.videos[index].thumbnail ??
                         'https://fdn.gsmarena.com/imgroot/news/23/02/youtube-testing-1080p-premium/-1200/gsmarena_000.jpg',
                     title: state.videos[index].title!,

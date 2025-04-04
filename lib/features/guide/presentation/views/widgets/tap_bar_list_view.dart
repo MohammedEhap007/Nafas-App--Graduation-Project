@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
+import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos_cubit.dart';
 
 class TapBarListView extends StatefulWidget {
   const TapBarListView({
@@ -19,6 +21,15 @@ class _TapBarListViewState extends State<TapBarListView> {
     'ازاي تبطل تدخين',
     'قصص'
   ];
+
+  final List<String> categories = [
+    'About',
+    'Damage',
+    'BenefitsOfQuitting',
+    'HowToQuitSmoking',
+    'Stories',
+  ];
+
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -37,6 +48,9 @@ class _TapBarListViewState extends State<TapBarListView> {
                 setState(
                   () {
                     selectedIndex = index;
+                    context.read<VideosCubit>().fetchVideos(
+                          category: categories[index],
+                        );
                   },
                 );
               },
