@@ -18,7 +18,7 @@ class VideosListView extends StatelessWidget {
             child: ListView.builder(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemCount: state.videos.length,
+              itemCount: 4,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 12),

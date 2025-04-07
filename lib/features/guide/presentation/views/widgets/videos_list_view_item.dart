@@ -49,6 +49,7 @@ class VideosListViewItem extends StatelessWidget {
             title,
             style: TextStyles.medium14(context),
             maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
         )
       ],
