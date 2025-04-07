@@ -13,11 +13,11 @@ class ArticlesListView extends StatelessWidget {
       builder: (context, state) {
         if (state is BlogsSuccess) {
           return AspectRatio(
-            aspectRatio: 8 / 3.6,
+            aspectRatio: 8 /3.8,
             child: ListView.builder(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemCount: state.blogs.length,
+              itemCount: 4,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 12),

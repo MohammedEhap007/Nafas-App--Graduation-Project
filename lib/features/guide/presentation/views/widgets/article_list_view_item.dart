@@ -19,25 +19,24 @@ class ArticleListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        launchCustomUrl(context, blogUrl);
-      },
-      child: SizedBox(
-        height: 180,
-        width: 140,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: GestureDetector(
+        onTap: () {
+          launchCustomUrl(context, blogUrl);
+        },
+        child: SizedBox(
+          width: 140,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
               CachedNetworkImage(
+                height: double.infinity,
                 imageUrl: imageUrl,
-                height: 180,
-                width: 140,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
               Container(
+                width: double.infinity,
                 height: 56,
                 decoration: BoxDecoration(
                   color: AppColors.primaryColor.withAlpha(128),
@@ -47,8 +46,9 @@ class ArticleListViewItem extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
                   title,
-                  style: TextStyles.medium14(context)
-                      .copyWith(color: Colors.white),
+                  style: TextStyles.medium14(context).copyWith(
+                    color: Colors.white,
+                  ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
