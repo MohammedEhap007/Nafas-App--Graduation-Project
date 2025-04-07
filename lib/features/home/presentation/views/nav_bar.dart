@@ -6,6 +6,7 @@ import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
+import 'package:nafas_app/features/guide/presentation/manger/blogs_cubit/blogs_cubit.dart';
 import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos_cubit.dart';
 import 'package:nafas_app/features/guide/presentation/views/guide_view.dart';
 import 'package:nafas_app/features/home/presentation/views/home_view.dart';
@@ -148,6 +149,7 @@ class _NavBarViewState extends State<NavBarView> {
                 selectedIndex = index;
                 if (index == 2) {
                   context.read<VideosCubit>().fetchVideos(category: 'About');
+                  context.read<BlogsCubit>().fetchBlogs(category: 'About');
                 }
               });
             },

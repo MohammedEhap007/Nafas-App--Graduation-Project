@@ -7,6 +7,7 @@ import 'package:nafas_app/core/helper/service_locator.dart';
 import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/features/guide/data/repos/guide_repo_impl.dart';
+import 'package:nafas_app/features/guide/presentation/manger/blogs_cubit/blogs_cubit.dart';
 import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos_cubit.dart';
 import 'package:nafas_app/features/savings_counter/data/models/savings_counter_model.dart';
 import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
@@ -37,6 +38,11 @@ class NafasApp extends StatelessWidget {
           create: (context) => VideosCubit(
             getIt.get<GuideRepoImpl>(),
           )..fetchVideos(category: 'About'),
+        ),
+        BlocProvider(
+          create: (context) => BlogsCubit(
+            getIt.get<GuideRepoImpl>(),
+          )..fetchBlogs(category: 'About'),
         ),
       ],
       child: MaterialApp(
