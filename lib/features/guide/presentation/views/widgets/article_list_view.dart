@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:nafas_app/core/utils/app_images.dart';
-import 'package:nafas_app/core/widgets/custom_container.dart';
+import 'package:nafas_app/features/guide/presentation/views/widgets/article_list_view_item.dart';
 
 class ArticlesListView extends StatelessWidget {
   const ArticlesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.25,
+    return AspectRatio(
+      aspectRatio: 8 /3.6,
       child: ListView.builder(
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
@@ -16,9 +15,7 @@ class ArticlesListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(left: 12),
-            child: CustomContainer(
-              child: Image.asset(Assets.imagesArticleTestImage),
-            ),
+            child: ArticleListViewItem(),
           );
         },
       ),
