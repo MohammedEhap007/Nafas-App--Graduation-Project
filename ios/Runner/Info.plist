@@ -47,5 +47,8 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<array>
+			<string>https</string>
+		</array>
 	</dict>
 </plist>

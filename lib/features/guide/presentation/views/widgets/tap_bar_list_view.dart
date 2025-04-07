@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
+import 'package:nafas_app/features/guide/presentation/manger/blogs_cubit/blogs_cubit.dart';
+import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos_cubit.dart';
 
 class TapBarListView extends StatefulWidget {
   const TapBarListView({
@@ -19,7 +22,14 @@ class _TapBarListViewState extends State<TapBarListView> {
     'ازاي تبطل تدخين',
     'قصص'
   ];
-  int selectedIndex = 0;
+
+  final List<String> categories = [
+    'About',
+    'Damage',
+    'BenefitsOfQuitting',
+    'HowToQuitSmoking',
+    'Stories',
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -36,7 +46,14 @@ class _TapBarListViewState extends State<TapBarListView> {
               onTap: () {
                 setState(
                   () {
-                    selectedIndex = index;
+                    context.read<VideosCubit>().selectedIndex = index;
+                    context.read<VideosCubit>().category = tabName[index];
+                    context.read<VideosCubit>().fetchVideos(
+                          category: categories[index],
+                        );
+                    context.read<BlogsCubit>().fetchBlogs(
+                          category: categories[index],
+                        );
                   },
                 );
               },
@@ -44,12 +61,16 @@ class _TapBarListViewState extends State<TapBarListView> {
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: selectedIndex == index ? AppColors.primaryColor : null,
+                  color: context.read<VideosCubit>().selectedIndex == index
+                      ? AppColors.primaryColor
+                      : null,
                 ),
                 child: Text(
                   tabName[index],
                   style: TextStyles.medium16(context).copyWith(
-                    color: selectedIndex == index ? Colors.white : Colors.black,
+                    color: context.read<VideosCubit>().selectedIndex == index
+                        ? Colors.white
+                        : Colors.black,
                   ),
                 ),
               ),

@@ -8,7 +8,7 @@ abstract class TextStyles {
     );
   }
 
-    static TextStyle bold20(context) {
+  static TextStyle bold20(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontWeight: FontWeight.w700,

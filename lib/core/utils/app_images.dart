@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/cigarette.png
   static const String imagesCigarette = "assets/images/cigarette.png";
 
+  /// Assets for imagesConnectionError
+  /// assets/images/connection_error.png
+  static const String imagesConnectionError = "assets/images/connection_error.png";
+
   /// Assets for imagesCup
   /// assets/images/cup.svg
   static const String imagesCup = "assets/images/cup.svg";
