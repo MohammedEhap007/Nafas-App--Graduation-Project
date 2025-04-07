@@ -10,7 +10,7 @@ class BlogsCubit extends Cubit<BlogsState> {
   BlogsCubit(this.guideRepo) : super(BlogsInitial());
   final GuideRepo guideRepo;
 
-  Future<void> fetchBlogs({required String category}) async {
+  Future<void> fetchBlogs({ String category = 'About'}) async {
     emit(BlogsLoading());
     var result = await guideRepo.fetchBlogs(category: category);
     result.fold(

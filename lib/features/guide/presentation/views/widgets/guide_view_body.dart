@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/features/guide/presentation/views/more_articles_view.dart';
 import 'package:nafas_app/features/guide/presentation/views/more_videos_view.dart';
 import 'package:nafas_app/features/guide/presentation/views/widgets/article_list_view.dart';
@@ -16,11 +15,6 @@ class GuideViewBody extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          SizedBox(height: 19),
-          Text(
-            'الفيديوهات والمقالات',
-            style: TextStyles.medium20(context),
-          ),
           SizedBox(height: 35),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),

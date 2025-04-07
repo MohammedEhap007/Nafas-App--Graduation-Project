@@ -30,8 +30,6 @@ class _TapBarListViewState extends State<TapBarListView> {
     'HowToQuitSmoking',
     'Stories',
   ];
-
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -48,7 +46,8 @@ class _TapBarListViewState extends State<TapBarListView> {
               onTap: () {
                 setState(
                   () {
-                    selectedIndex = index;
+                    context.read<VideosCubit>().selectedIndex = index;
+                    context.read<VideosCubit>().category = tabName[index];
                     context.read<VideosCubit>().fetchVideos(
                           category: categories[index],
                         );
@@ -62,12 +61,16 @@ class _TapBarListViewState extends State<TapBarListView> {
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: selectedIndex == index ? AppColors.primaryColor : null,
+                  color: context.read<VideosCubit>().selectedIndex == index
+                      ? AppColors.primaryColor
+                      : null,
                 ),
                 child: Text(
                   tabName[index],
                   style: TextStyles.medium16(context).copyWith(
-                    color: selectedIndex == index ? Colors.white : Colors.black,
+                    color: context.read<VideosCubit>().selectedIndex == index
+                        ? Colors.white
+                        : Colors.black,
                   ),
                 ),
               ),
