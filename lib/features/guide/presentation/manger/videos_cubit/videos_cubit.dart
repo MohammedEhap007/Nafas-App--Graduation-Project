@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:nafas_app/features/guide/data/repos/guide_repo.dart';
 
-import '../../../data/models/videos_model/videos_model.dart';
+import '../../../data/models/guide_model/guide_model.dart';
 
 part 'videos_state.dart';
 

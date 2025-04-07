@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:nafas_app/core/errors/failure.dart';
 import 'package:nafas_app/core/utils/api_service.dart';
-import 'package:nafas_app/features/guide/data/models/videos_model/videos_model.dart';
+import 'package:nafas_app/features/guide/data/models/guide_model/guide_model.dart';
 import 'package:nafas_app/features/guide/data/repos/guide_repo.dart';
 
 class GuideRepoImpl implements GuideRepo {
@@ -10,18 +10,45 @@ class GuideRepoImpl implements GuideRepo {
 
   GuideRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<VideosModel>>> fetchVideos({
+  Future<Either<Failure, List<GuideModel>>> fetchVideos({
     required String category,
   }) async {
     try {
       var data = await apiService.get(
         endPoint: 'Videos/$category',
       );
-      List<VideosModel> videos = [];
+      List<GuideModel> videos = [];
       for (var video in data) {
-        videos.add(VideosModel.fromJson(video));
+        videos.add(GuideModel.fromJson(video));
       }
       return right(videos);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioException(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<GuideModel>>> fetchBlogs({
+    required String category,
+  }) async {
+    try {
+      var data = await apiService.get(
+        endPoint: 'Blogs/$category',
+      );
+      List<GuideModel> blogs = [];
+      for (var video in data) {
+        blogs.add(GuideModel.fromJson(video));
+      }
+      return right(blogs);
     } catch (e) {
       if (e is DioException) {
         return left(

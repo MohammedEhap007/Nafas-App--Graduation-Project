@@ -12,7 +12,7 @@ final class VideosInitial extends VideosState {}
 final class VideosLoading extends VideosState {}
 
 final class VideosSuccess extends VideosState {
-  final List<VideosModel> videos;
+  final List<GuideModel> videos;
 
   const VideosSuccess(this.videos);
 }
