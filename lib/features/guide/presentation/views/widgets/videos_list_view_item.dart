@@ -30,7 +30,7 @@ class VideosListViewItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: CachedNetworkImage(
                   imageUrl: imageUrl,
-                  height: 125,
+                  width: 225,
                   fit: BoxFit.fill,
                 ),
               ),
