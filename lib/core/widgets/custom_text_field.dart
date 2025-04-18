@@ -11,12 +11,18 @@ class CustomTextField extends StatelessWidget {
     required this.icon,
     this.validator,
     this.suffixIcon,
+    this.keyboardType,
+    this.isPassword = false,
+    this.textInputAction,
   });
   final String lable;
   final String hint;
   final String icon;
   final String? suffixIcon;
   final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
+  final bool isPassword;
+  final TextInputAction? textInputAction;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,6 +34,9 @@ class CustomTextField extends StatelessWidget {
           style: TextStyles.medium16(context),
         ),
         TextFormField(
+          obscureText: isPassword,
+          keyboardType: keyboardType,
+          textInputAction: textInputAction,
           validator: validator,
           cursorColor: AppColors.primaryColor,
           decoration: InputDecoration(
