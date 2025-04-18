@@ -14,15 +14,17 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType,
     this.isPassword = false,
     this.textInputAction,
+    this.onChanged,
   });
   final String lable;
   final String hint;
   final String icon;
-  final String? suffixIcon;
+  final Widget? suffixIcon;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
   final bool isPassword;
   final TextInputAction? textInputAction;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,35 +35,40 @@ class CustomTextField extends StatelessWidget {
           lable,
           style: TextStyles.medium16(context),
         ),
-        TextFormField(
-          obscureText: isPassword,
-          keyboardType: keyboardType,
-          textInputAction: textInputAction,
-          validator: validator,
-          cursorColor: AppColors.primaryColor,
-          decoration: InputDecoration(
-            hintText: hint,
-            hintStyle: TextStyles.medium16(context).copyWith(
-              color: AppColors.secondaryTextColor,
+        SizedBox(
+          height: 70,
+          child: TextFormField(
+            onChanged: onChanged,
+            obscureText: isPassword,
+            keyboardType: keyboardType,
+            textInputAction: textInputAction,
+            validator: validator,
+            cursorColor: AppColors.primaryColor,
+            decoration: InputDecoration(
+              hintText: hint,
+              errorStyle: TextStyles.medium14(context).copyWith(
+                color: AppColors.importantButtonsBackgroundColor,
+                height: 1,
+              ),
+              errorMaxLines: 1,
+              hintStyle: TextStyles.medium16(context).copyWith(
+                color: AppColors.secondaryTextColor,
+              ),
+              filled: true,
+              fillColor: Colors.white,
+              constraints: BoxConstraints(
+                maxHeight: 55,
+              ),
+              border: border(),
+              enabledBorder: border(),
+              focusedBorder: border(),
+              focusedErrorBorder: border(),
+              prefixIcon: SvgPicture.asset(
+                icon,
+                fit: BoxFit.scaleDown,
+              ),
+              suffixIcon: suffixIcon,
             ),
-            filled: true,
-            fillColor: Colors.white,
-            constraints: BoxConstraints(
-              maxHeight: 55,
-            ),
-            border: border(),
-            enabledBorder: border(),
-            focusedBorder: border(),
-            prefixIcon: SvgPicture.asset(
-              icon,
-              fit: BoxFit.scaleDown,
-            ),
-            suffixIcon: suffixIcon != null
-                ? SvgPicture.asset(
-                    suffixIcon!,
-                    fit: BoxFit.scaleDown,
-                  )
-                : null,
           ),
         ),
       ],
