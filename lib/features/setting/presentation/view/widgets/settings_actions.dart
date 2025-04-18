@@ -9,7 +9,7 @@ import 'package:nafas_app/features/setting/presentation/view/rules_view.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_alert.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_settings_container.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/custom_settings_tap_to_expand.dart';
-import 'package:nafas_app/features/setting/presentation/view/widgets/custom_switcher.dart';
+// import 'package:nafas_app/features/setting/presentation/view/widgets/custom_switcher.dart';
 
 class SettingsActions extends StatelessWidget {
   const SettingsActions({
@@ -73,15 +73,15 @@ class SettingsActions extends StatelessWidget {
             ],
           ),
         ),
-        CustomSettingsContainer(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 17,
-          ),
-          icon: AppCustomIcons.nightMoodIcon,
-          lable: 'الوضع الليلي',
-          lastWidget: CustomSwitcher(),
-        ),
+        // CustomSettingsContainer(
+        //   padding: const EdgeInsets.symmetric(
+        //     horizontal: 16,
+        //     vertical: 17,
+        //   ),
+        //   icon: AppCustomIcons.nightMoodIcon,
+        //   lable: 'الوضع الليلي',
+        //   lastWidget: CustomSwitcher(),
+        // ),
         CustomSettingsTapToExpand(
           icon: AppCustomIcons.usageDataIcon,
           lable: 'بيانات الإستخدام',

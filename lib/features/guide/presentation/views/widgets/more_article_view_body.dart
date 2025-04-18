@@ -13,7 +13,6 @@ class MoreArticleViewBody extends StatelessWidget {
       builder: (context, state) {
         if (state is BlogsSuccess) {
           return GridView.builder(
-            physics: BouncingScrollPhysics(),
             itemCount: state.blogs.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,

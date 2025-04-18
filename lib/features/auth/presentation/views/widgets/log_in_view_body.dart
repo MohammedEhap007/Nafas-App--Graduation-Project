@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
-import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
-import 'package:nafas_app/core/widgets/custom_button.dart';
-import 'package:nafas_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:nafas_app/features/auth/presentation/views/sign_up_view.dart';
-import 'package:nafas_app/core/widgets/custom_text_field.dart';
 import 'package:nafas_app/features/auth/presentation/views/widgets/google_section.dart';
+import 'package:nafas_app/features/auth/presentation/views/widgets/log_in_form.dart';
 import 'package:nafas_app/features/auth/presentation/views/widgets/welcome_section.dart';
-import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
 
 class LogInViewBody extends StatelessWidget {
   const LogInViewBody({super.key});
@@ -26,45 +22,7 @@ class LogInViewBody extends StatelessWidget {
             const SizedBox(height: 80),
             WelcomeSection(),
             const SizedBox(height: 52),
-            Form(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomTextField(
-                    lable: 'البريد الإلكتروني',
-                    hint: 'mail@example.com',
-                    icon: AppCustomIcons.mailIcon,
-                  ),
-                  const SizedBox(height: 12),
-                  CustomTextField(
-                    lable: 'كلمة المرور',
-                    hint: '********',
-                    icon: AppCustomIcons.lockIcon,
-                    suffixIcon: AppCustomIcons.hideIcon,
-                  ),
-                  const SizedBox(height: 12),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(
-                          context, ForgetPasswordView.routeName);
-                    },
-                    child: Text(
-                      'نسيت كلمة المرور؟',
-                      style: TextStyles.medium14(context).copyWith(
-                        color: AppColors.importantButtonsBackgroundColor,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 33),
-                  CustomButton(
-                    text: 'تسجيل الدخول',
-                    onPressed: () {
-                      Navigator.pushNamed(context, NavBarView.routeName);
-                    },
-                  ),
-                ],
-              ),
-            ),
+            LogInForm(),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

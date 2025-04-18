@@ -125,7 +125,8 @@ class _CustomDialogTextFieldState extends State<CustomDialogTextField> {
                           );
                         },
                         text: widget.buttonTwoTitle!,
-                        isError: true,
+                        backgroundColor:
+                            AppColors.importantButtonsBackgroundColor,
                       ),
                     ),
                   ],

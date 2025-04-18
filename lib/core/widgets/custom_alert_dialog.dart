@@ -79,7 +79,7 @@ class CustomAlertDialog extends StatelessWidget {
                   child: CustomButton(
                     onPressed: buttonOneOnPressed,
                     text: buttonOneTitle,
-                    isError: true,
+                    backgroundColor: AppColors.importantButtonsBackgroundColor,
                   ),
                 ),
               ),

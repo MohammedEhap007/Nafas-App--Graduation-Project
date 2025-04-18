@@ -15,7 +15,6 @@ class ArticlesListView extends StatelessWidget {
           return AspectRatio(
             aspectRatio: 8 / 3.8,
             child: ListView.builder(
-              physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {

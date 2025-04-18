@@ -36,7 +36,6 @@ class _TapBarListViewState extends State<TapBarListView> {
       height: MediaQuery.sizeOf(context).height * 0.1,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        physics: BouncingScrollPhysics(),
         itemCount: tabName.length,
         itemBuilder: (context, index) {
           return FittedBox(
