@@ -13,7 +13,6 @@ class MoreVideosViewBody extends StatelessWidget {
       builder: (context, state) {
         if (state is VideosSuccess) {
           return GridView.builder(
-            physics: BouncingScrollPhysics(),
             itemCount: state.videos.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,

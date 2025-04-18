@@ -9,14 +9,12 @@ class VideosListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return BlocBuilder<VideosCubit, VideosState>(
       builder: (context, state) {
         if (state is VideosSuccess) {
           return AspectRatio(
             aspectRatio: 8 / 5,
             child: ListView.builder(
-              physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {

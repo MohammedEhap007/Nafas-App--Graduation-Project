@@ -16,7 +16,6 @@ class SavingsCounterViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: kHorizontalPadding,

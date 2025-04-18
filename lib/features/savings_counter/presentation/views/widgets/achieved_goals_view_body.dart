@@ -15,7 +15,6 @@ class AchievedGoalsViewBody extends StatelessWidget {
         horizontal: kHorizontalPadding,
       ),
       child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(
             bottom: 12,
