@@ -35,7 +35,7 @@ class _LogInFormState extends State<LogInForm> {
             icon: AppCustomIcons.mailIcon,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
-            onChanged: (value) {
+            onSaved: (value) {
               email = value;
             },
             validator: (value) {
@@ -65,7 +65,7 @@ class _LogInFormState extends State<LogInForm> {
             keyboardType: TextInputType.visiblePassword,
             textInputAction: TextInputAction.done,
             isPassword: hiddenPassword,
-            onChanged: (value) {
+            onSaved: (value) {
               password = value;
             },
             validator: (value) {
