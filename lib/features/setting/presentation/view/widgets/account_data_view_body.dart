@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/get_user.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
@@ -20,13 +21,13 @@ class AccountDataViewBody extends StatelessWidget {
         ),
         CustomTextField(
           lable: 'الإسم الأول',
-          hint: 'محمد',
+          hint: '${getUser().name.split(' ').first}',
           icon: AppCustomIcons.humanIcon,
         ),
         SizedBox(height: 20),
         CustomTextField(
           lable: 'الإسم الأخير',
-          hint: 'أبو النجا',
+          hint: '${getUser().name.split(' ').last}',
           icon: AppCustomIcons.humanIcon,
         ),
         SizedBox(height: 36),

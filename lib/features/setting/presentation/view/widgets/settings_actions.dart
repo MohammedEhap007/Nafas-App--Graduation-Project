@@ -130,6 +130,7 @@ class SettingsActions extends StatelessWidget {
                   ),
                   button2: CustomButton(
                     onPressed: () {
+                      
                       Navigator.pushNamedAndRemoveUntil(
                           context, LogInView.routeName, (route) => false);
                     },

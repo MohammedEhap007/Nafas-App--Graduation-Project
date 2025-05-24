@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nafas_app/core/helper/get_user.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 
@@ -17,7 +18,7 @@ class HomeViewAppBar extends StatelessWidget {
           SvgPicture.asset(AppCustomIcons.blueHumanIcon),
           const SizedBox(width: 15),
           Text(
-            'مرحبا بك, يا محمد أحمد',
+            'مرحبا بك, يا ${getUser().name.split(' ').first}',
             style: TextStyles.medium16(context),
           ),
           Spacer(),

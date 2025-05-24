@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafas_app/core/helper/get_user.dart';
 import 'package:nafas_app/core/utils/app_images.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/features/setting/presentation/view/widgets/settings_actions.dart';
@@ -23,7 +24,7 @@ class SettingsViewBody extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            'محمد أبو النجا',
+            '${getUser().name}',
             style: TextStyles.medium20(context),
           ),
           SizedBox(height: 30),

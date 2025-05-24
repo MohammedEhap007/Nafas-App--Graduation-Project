@@ -17,6 +17,7 @@ class CustomTextField extends StatelessWidget {
     this.onChanged,
     this.onSaved,
     this.controller,
+    this.autovalidateMode,
   });
   final String lable;
   final String hint;
@@ -29,6 +30,7 @@ class CustomTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
   final TextEditingController? controller;
+  final AutovalidateMode? autovalidateMode;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,6 +44,7 @@ class CustomTextField extends StatelessWidget {
         SizedBox(
           height: 70,
           child: TextFormField(
+            autovalidateMode: autovalidateMode,
             controller: controller,
             onSaved: onSaved,
             onChanged: onChanged,

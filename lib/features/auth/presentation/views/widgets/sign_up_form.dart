@@ -33,6 +33,7 @@ class _SignUpFormState extends State<SignUpForm> {
         spacing: 8,
         children: [
           CustomTextField(
+            autovalidateMode: autovalidateMode,
             lable: 'الاسم بالكامل ',
             hint: 'الاسم بالكامل ',
             icon: AppCustomIcons.humanIcon,
@@ -49,6 +50,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
           ),
           CustomTextField(
+            autovalidateMode: autovalidateMode,
             lable: 'البريد الإلكتروني',
             hint: 'mail@example.com',
             icon: AppCustomIcons.mailIcon,
@@ -67,6 +69,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
           ),
           CustomTextField(
+            autovalidateMode: autovalidateMode,
             controller: passwordController,
             lable: 'كلمة المرور',
             hint: '********',
@@ -100,6 +103,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
           ),
           CustomTextField(
+            autovalidateMode: autovalidateMode,
             controller: confirmPasswordController,
             lable: 'تأكيد كلمة المرور',
             hint: '********',

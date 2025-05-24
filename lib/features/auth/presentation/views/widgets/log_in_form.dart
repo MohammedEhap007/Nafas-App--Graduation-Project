@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/utils/app_text_styles.dart';
 import 'package:nafas_app/core/widgets/custom_button.dart';
 import 'package:nafas_app/core/widgets/custom_text_field.dart';
+import 'package:nafas_app/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:nafas_app/features/auth/presentation/views/forget_password_view.dart';
-import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
 
 class LogInForm extends StatefulWidget {
   const LogInForm({
@@ -21,6 +22,8 @@ class _LogInFormState extends State<LogInForm> {
   bool hiddenPassword = true;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   String? email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -30,6 +33,7 @@ class _LogInFormState extends State<LogInForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
+            autovalidateMode: autovalidateMode,
             lable: 'البريد الإلكتروني',
             hint: 'mail@example.com',
             icon: AppCustomIcons.mailIcon,
@@ -41,11 +45,14 @@ class _LogInFormState extends State<LogInForm> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'الرجاء إدخال البريد الإلكتروني';
+              } else if (!value.contains('@') || !value.contains('.')) {
+                return 'الرجاء إدخال بريد إلكتروني صحيح';
               }
               return null;
             },
           ),
           CustomTextField(
+            autovalidateMode: autovalidateMode,
             lable: 'كلمة المرور',
             hint: '********',
             icon: AppCustomIcons.lockIcon,
@@ -71,6 +78,8 @@ class _LogInFormState extends State<LogInForm> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'الرجاء إدخال كلمة المرور';
+              } else if (value.length < 8) {
+                return 'كلمة المرور يجب أن تكون أكثر من 8 أحرف';
               }
               return null;
             },
@@ -91,7 +100,15 @@ class _LogInFormState extends State<LogInForm> {
             text: 'تسجيل الدخول',
             onPressed: () {
               if (formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, NavBarView.routeName);
+                formKey.currentState!.save();
+                context.read<SignInCubit>().signInWithEmailAndPassword(
+                      email!.trim(),
+                      password!.trim(),
+                    );
+              } else {
+                setState(() {
+                  autovalidateMode = AutovalidateMode.always;
+                });
               }
             },
           ),
