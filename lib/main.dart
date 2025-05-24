@@ -49,6 +49,7 @@ class NafasApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Tajawal',
           scaffoldBackgroundColor: AppColors.primaryBackgroundColor,
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
         ),
         locale: Locale('ar'),
         localizationsDelegates: [
