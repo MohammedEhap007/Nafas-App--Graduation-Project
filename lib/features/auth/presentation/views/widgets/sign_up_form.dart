@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/widgets/custom_button.dart';
 import 'package:nafas_app/core/widgets/custom_text_field.dart';
-import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
+import 'package:nafas_app/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({
@@ -18,7 +19,11 @@ class _SignUpFormState extends State<SignUpForm> {
   bool hiddenPassword = true;
   bool hiddenConfirmPassword = true;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String? name, email, password, confirmPassword;
+  String? name, email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,7 @@ class _SignUpFormState extends State<SignUpForm> {
             icon: AppCustomIcons.humanIcon,
             keyboardType: TextInputType.name,
             textInputAction: TextInputAction.next,
-            onChanged: (value) {
+            onSaved: (value) {
               name = value;
             },
             validator: (value) {
@@ -49,7 +54,7 @@ class _SignUpFormState extends State<SignUpForm> {
             icon: AppCustomIcons.mailIcon,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
-            onChanged: (value) {
+            onSaved: (value) {
               email = value;
             },
             validator: (value) {
@@ -62,6 +67,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
           ),
           CustomTextField(
+            controller: passwordController,
             lable: 'كلمة المرور',
             hint: '********',
             icon: AppCustomIcons.lockIcon,
@@ -81,7 +87,7 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.visiblePassword,
             isPassword: hiddenPassword,
             textInputAction: TextInputAction.next,
-            onChanged: (value) {
+            onSaved: (value) {
               password = value;
             },
             validator: (value) {
@@ -94,6 +100,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
           ),
           CustomTextField(
+            controller: confirmPasswordController,
             lable: 'تأكيد كلمة المرور',
             hint: '********',
             icon: AppCustomIcons.lockIcon,
@@ -113,13 +120,10 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.visiblePassword,
             isPassword: hiddenConfirmPassword,
             textInputAction: TextInputAction.done,
-            onChanged: (value) {
-              confirmPassword = value;
-            },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'الرجاء إدخال تأكيد كلمة المرور';
-              } else if (value != password) {
+              } else if (value != passwordController.text) {
                 return 'كلمة المرور غير متطابقة';
               }
               return null;
@@ -129,7 +133,16 @@ class _SignUpFormState extends State<SignUpForm> {
             text: 'إنشاء حساب',
             onPressed: () {
               if (formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, NavBarView.routeName);
+                formKey.currentState!.save();
+                context.read<SignUpCubit>().createUserWithEmailAndPassword(
+                      name!.trim(),
+                      email!.trim(),
+                      password!.trim(),
+                    );
+              } else {
+                setState(() {
+                  autovalidateMode = AutovalidateMode.always;
+                });
               }
             },
           ),

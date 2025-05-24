@@ -15,6 +15,8 @@ class CustomTextField extends StatelessWidget {
     this.isPassword = false,
     this.textInputAction,
     this.onChanged,
+    this.onSaved,
+    this.controller,
   });
   final String lable;
   final String hint;
@@ -25,6 +27,8 @@ class CustomTextField extends StatelessWidget {
   final bool isPassword;
   final TextInputAction? textInputAction;
   final void Function(String)? onChanged;
+  final void Function(String?)? onSaved;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,6 +42,8 @@ class CustomTextField extends StatelessWidget {
         SizedBox(
           height: 70,
           child: TextFormField(
+            controller: controller,
+            onSaved: onSaved,
             onChanged: onChanged,
             obscureText: isPassword,
             keyboardType: keyboardType,

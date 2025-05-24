@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nafas_app/core/helper/on_generate_routes.dart';
+import 'package:nafas_app/core/services/custom_bloc_observer.dart';
 import 'package:nafas_app/core/services/get_it_service.dart';
 import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
@@ -19,6 +20,7 @@ import 'package:nafas_app/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = CustomBlocObserver();
   await dotenv.load(fileName: ".env");
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
