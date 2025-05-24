@@ -11,7 +11,7 @@ class AccountDataView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'الشروط والأحكام',
+          'بيانات الحساب',
           style: TextStyles.medium20(context),
         ),
         centerTitle: true,

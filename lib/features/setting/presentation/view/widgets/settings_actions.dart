@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
@@ -54,7 +56,15 @@ class SettingsActions extends StatelessWidget {
                         content:
                             'فور تأكيدك حذف الحساب , سيتم حذف الحساب نهائيا ولا يمكن إيقاف عملية الحذف بمجرد التأكيد.',
                         button1: CustomButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(FirebaseAuth.instance.currentUser!.uid)
+                                .delete();
+                            FirebaseAuth.instance.currentUser!.delete();
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, LogInView.routeName, (route) => false);
+                          },
                           text: 'حذف',
                           backgroundColor:
                               AppColors.importantButtonsBackgroundColor,
@@ -130,7 +140,6 @@ class SettingsActions extends StatelessWidget {
                   ),
                   button2: CustomButton(
                     onPressed: () {
-                      
                       Navigator.pushNamedAndRemoveUntil(
                           context, LogInView.routeName, (route) => false);
                     },
