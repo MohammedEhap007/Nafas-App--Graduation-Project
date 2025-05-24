@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "518466479592",
+    "project_id": "nafas-app",
+    "storage_bucket": "nafas-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518466479592:android:7aea91a055f1cebf85305d",
+        "android_client_info": {
+          "package_name": "com.example.nafas_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518466479592-r68cj7i7b3gah0ukkp4gq32ef9urevo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTKXX7qd37XsoIH-Qx4X3vi-n-XZzU3EE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518466479592-r68cj7i7b3gah0ukkp4gq32ef9urevo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

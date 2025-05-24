@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nafas_app/core/helper/on_generate_routes.dart';
@@ -12,10 +14,15 @@ import 'package:nafas_app/features/guide/presentation/manger/videos_cubit/videos
 import 'package:nafas_app/features/savings_counter/data/models/savings_counter_model.dart';
 import 'package:nafas_app/features/savings_counter/presentation/manger/savings_counter_cubit/savings_counter_cubit.dart';
 import 'package:nafas_app/features/splash/presentation/views/splash_view.dart';
+import 'package:nafas_app/firebase_options.dart';
 import 'package:nafas_app/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Prefs.init();
   await Hive.initFlutter();
   Hive.registerAdapter(SavingsCounterModelAdapter());
