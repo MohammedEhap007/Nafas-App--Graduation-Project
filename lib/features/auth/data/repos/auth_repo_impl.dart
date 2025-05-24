@@ -37,11 +37,55 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
       );
 
-      var userEntity = UserEntity(
+      final userEntity = UserEntity(
         name: name,
         email: email,
         uId: user.uid,
       );
+
+      final isUserExists = await databaseService.isDataExists(
+        path: BackendEndpoint.isUserExists,
+        documentId: user.uid,
+      );
+
+      if (isUserExists) {
+        await getUserData(uId: user.uid);
+      } else {
+        await addUserData(user: userEntity);
+      }
+
+      await saveUserData(user: userEntity);
+
+      return right(userEntity);
+    } on CustomException catch (e) {
+      await deleteUser(user);
+
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      deleteUser(user);
+
+      log(
+        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
+      );
+
+      return left(ServerFailure('لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
+    String email,
+    String password,
+  ) async {
+    try {
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      var userEntity = await getUserData(uId: user.uid);
+
+      await saveUserData(user: userEntity);
 
       return right(
         userEntity,
@@ -51,19 +95,12 @@ class AuthRepoImpl extends AuthRepo {
         ServerFailure(e.message),
       );
     } catch (e) {
-      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}');
+      log('Exception in AuthRepoImpl.signInWithEmailAndPassword: ${e.toString()}');
 
       return left(
         ServerFailure('لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
       );
     }
-  }
-
-  @override
-  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
-      String email, String password) {
-    // TODO: implement signInWithEmailAndPassword
-    throw UnimplementedError();
   }
 
   @override
