@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:nafas_app/core/errors/failure.dart';
-import 'package:nafas_app/core/utils/api_service.dart';
+import 'package:nafas_app/core/services/api_service.dart';
 import 'package:nafas_app/features/guide/data/models/guide_model/guide_model.dart';
 import 'package:nafas_app/features/guide/data/repos/guide_repo.dart';
 
