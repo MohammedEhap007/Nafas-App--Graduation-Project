@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:nafas_app/constant.dart';
+import 'package:nafas_app/core/helper/show_custom_snack_bar.dart';
+import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/core/utils/app_colors.dart';
 import 'package:nafas_app/core/utils/app_custom_icons.dart';
 import 'package:nafas_app/core/widgets/custom_button.dart';
@@ -62,8 +65,12 @@ class SettingsActions extends StatelessWidget {
                                 .doc(FirebaseAuth.instance.currentUser!.uid)
                                 .delete();
                             FirebaseAuth.instance.currentUser!.delete();
+                            Prefs.remove(kUserData);
                             Navigator.pushNamedAndRemoveUntil(
                                 context, LogInView.routeName, (route) => false);
+                            showCustomSnackBar(context,
+                                message: 'تم حذف الحساب بنجاح',
+                                isSucceeded: true);
                           },
                           text: 'حذف',
                           backgroundColor:
@@ -142,6 +149,13 @@ class SettingsActions extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamedAndRemoveUntil(
                           context, LogInView.routeName, (route) => false);
+                      FirebaseAuth.instance.signOut();
+                      Prefs.remove(kUserData);
+                      showCustomSnackBar(
+                        context,
+                        message: 'تم تسجيل الخروج بنجاح',
+                        isSucceeded: true,
+                      );
                     },
                     text: 'تأكيد',
                     backgroundColor: AppColors.importantButtonsBackgroundColor,

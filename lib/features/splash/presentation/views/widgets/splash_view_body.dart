@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:nafas_app/constant.dart';
+import 'package:nafas_app/core/services/firebase_auth_service.dart';
 import 'package:nafas_app/core/services/shared_preferences_singleton.dart';
 import 'package:nafas_app/features/auth/presentation/views/log_in_view.dart';
+import 'package:nafas_app/features/home/presentation/views/nav_bar.dart';
 import 'package:nafas_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -56,8 +58,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
       const Duration(milliseconds: 4800),
       () {
         if (isOnBoardingSeen) {
-          if (mounted) {
-            Navigator.pushReplacementNamed(context, LogInView.routeName);
+          var isLoggedIn = FirebaseAuthService().isLoggedIn();
+
+          if (isLoggedIn) {
+            if (mounted) {
+              Navigator.pushReplacementNamed(context, NavBarView.routeName);
+            }
+          } else {
+            if (mounted) {
+              Navigator.pushReplacementNamed(context, LogInView.routeName);
+            }
           }
         } else {
           if (mounted) {
