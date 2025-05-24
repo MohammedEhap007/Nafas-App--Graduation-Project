@@ -41,5 +41,43 @@ class FirebaseAuthService {
     }
   }
 
+  Future<User> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return credential.user!;
+    } on FirebaseAuthException catch (e) {
+      log('Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()} \n and code is: ${e.code}');
+      if (e.code == 'user-not-found') {
+        throw CustomException(
+          message: 'البريد الالكتروني غير صحيح أو كلمة المرور غير صحيحة.',
+        );
+      } else if (e.code == 'wrong-password') {
+        throw CustomException(
+          message: 'البريد الالكتروني غير صحيح أو كلمة المرور غير صحيحة.',
+        );
+      } else if (e.code == 'invalid-credential') {
+        throw CustomException(
+          message: 'البريد الالكتروني غير صحيح أو كلمة المرور غير صحيحة.',
+        );
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(message: 'تأكد من اتصالك بالانترنت.');
+      } else {
+        throw CustomException(
+            message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+      }
+    } catch (e) {
+      log('Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()}');
+
+      throw CustomException(
+          message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+    }
+  }
+
   bool isLoggedIn() => FirebaseAuth.instance.currentUser != null;
 }
